@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dndn07wuu1vqd"]
+
+[ext_resource type="Texture2D" uid="uid://b7wmt1hcagsow" path="res://assets/levels/Images/CarRed.png" id="1_bgn0w"]
+[ext_resource type="Script" uid="uid://b7v5k2ktas8p8" path="res://scripts/RedCar.gd" id="1_itkl7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bgn0w"]
+radius = 9.0
+height = 28.0
+
+[node name="red_car" type="Area2D" unique_id=323058446]
+script = ExtResource("1_itkl7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1896985246]
+rotation = 1.5707964
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_bgn0w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=259636913]
+position = Vector2(-2, 0)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_bgn0w")
