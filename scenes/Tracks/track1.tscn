@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://3qtcfffg8q0c"]
 
 [ext_resource type="Texture2D" uid="uid://c1m5vk3rejca7" path="res://assets/levels/Images/Monaco.png" id="1_0orj5"]
+[ext_resource type="Script" uid="uid://iqej1grh57xd" path="res://scripts/Track_1.gd" id="1_7fxw1"]
 [ext_resource type="Texture2D" uid="uid://2msta3ane5h5" path="res://assets/levels/Images/WaterBg.png" id="1_kskby"]
 [ext_resource type="PackedScene" uid="uid://dndn07wuu1vqd" path="res://scenes/RedCar.tscn" id="3_7fxw1"]
 
 [node name="track1" type="Node" unique_id=647559077]
+script = ExtResource("1_7fxw1")
 
 [node name="bakcground" type="Sprite2D" parent="." unique_id=460417291]
 position = Vector2(591, 319)
@@ -19,3 +21,13 @@ texture = ExtResource("1_0orj5")
 [node name="red_car" parent="." unique_id=323058446 instance=ExtResource("3_7fxw1")]
 position = Vector2(613.99994, 474.99997)
 scale = Vector2(0.8, 0.8)
+
+[node name="track_collision" type="Area2D" parent="." unique_id=130510195]
+
+[node name="outside collision" type="CollisionPolygon2D" parent="track_collision" unique_id=870524395]
+polygon = PackedVector2Array(509, 187, 541, 151, 583, 102, 647, 43, 695, 20, 732, 11, 768, 25, 895, 75, 1030, 153, 1075, 211, 1086, 273, 1074, 315, 1030, 358, 982, 369, 914, 372, 865, 367, 800, 350, 830, 371, 850, 386, 939, 452, 961, 489, 966, 528, 959, 563, 942, 592, 907, 616, 858, 623, 745, 598, 616, 553, 493, 516, 390, 527, 310, 538, 254, 545, 177, 540, 141, 524, 114, 505, 85, 466, 72, 422, 66, 378, 68, 338, 94, 263, 151, 177, 227, 108, 318, 52, 367, 41, 407, 55, 450, 108, 503, 185, 507, -17, 165, -13, 9, 330, 116, 639, 1195, 669, 1182, -3, 516, -16)
+
+[node name="inside collision" type="CollisionPolygon2D" parent="track_collision" unique_id=1402515962]
+polygon = PackedVector2Array(346, 180, 410, 267, 448, 313, 476, 328, 500, 333, 522, 331, 552, 316, 587, 282, 708, 154, 728, 140, 748, 148, 840, 187, 903, 220, 941, 248, 791, 228, 745, 232, 695, 260, 666, 306, 665, 354, 682, 398, 727, 450, 764, 474, 702, 452, 593, 415, 508, 395, 439, 395, 399, 397, 346, 407, 252, 422, 201, 418, 189, 381, 204, 325, 244, 260, 295, 212)
+
+[connection signal="area_entered" from="track_collision" to="." method="_on_track_collision_area_entered"]
