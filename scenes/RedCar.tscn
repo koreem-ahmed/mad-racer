@@ -13,7 +13,6 @@ _data = [Vector2(0.0045871586, 0.4809844), 0.0, 0.0, 0, 0, Vector2(0.6605505, 1)
 point_count = 3
 
 [node name="red_car" type="Area2D" unique_id=323058446]
-collision_mask = 0
 script = ExtResource("1_itkl7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1896985246]

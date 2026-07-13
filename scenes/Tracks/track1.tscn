@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://2msta3ane5h5" path="res://assets/levels/Images/WaterBg.png" id="1_kskby"]
 [ext_resource type="PackedScene" uid="uid://dndn07wuu1vqd" path="res://scenes/RedCar.tscn" id="3_7fxw1"]
 [ext_resource type="PackedScene" uid="uid://bvun3v1h17op6" path="res://scenes/OilDropper.tscn" id="5_6dgdl"]
+[ext_resource type="PackedScene" uid="uid://cyyxdym0ykal" path="res://scenes/Oil.tscn" id="6_osia5"]
 
 [sub_resource type="Curve2D" id="Curve2D_7fxw1"]
 _data = {
@@ -26,7 +27,7 @@ scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_0orj5")
 
 [node name="red_car" parent="." unique_id=323058446 instance=ExtResource("3_7fxw1")]
-position = Vector2(613.99994, 474.99997)
+position = Vector2(578.00006, 496.99997)
 scale = Vector2(0.8, 0.8)
 
 [node name="track_collision" type="Area2D" parent="." unique_id=130510195]
@@ -55,5 +56,8 @@ debug = false
 oil_container = NodePath("../../oil_container")
 
 [node name="oil_container" type="Node" parent="." unique_id=1420500395]
+
+[node name="Oil" parent="." unique_id=1737089996 instance=ExtResource("6_osia5")]
+position = Vector2(686, 505)
 
 [connection signal="area_entered" from="track_collision" to="." method="_on_track_collision_area_entered"]
