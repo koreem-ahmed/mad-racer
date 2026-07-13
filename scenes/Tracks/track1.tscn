@@ -4,6 +4,13 @@
 [ext_resource type="Script" uid="uid://iqej1grh57xd" path="res://scripts/Track_1.gd" id="1_7fxw1"]
 [ext_resource type="Texture2D" uid="uid://2msta3ane5h5" path="res://assets/levels/Images/WaterBg.png" id="1_kskby"]
 [ext_resource type="PackedScene" uid="uid://dndn07wuu1vqd" path="res://scenes/RedCar.tscn" id="3_7fxw1"]
+[ext_resource type="PackedScene" uid="uid://bvun3v1h17op6" path="res://scenes/OilDropper.tscn" id="5_6dgdl"]
+
+[sub_resource type="Curve2D" id="Curve2D_7fxw1"]
+_data = {
+"points": PackedVector2Array(-22.545454, 84.36363, 22.545454, -84.36363, 872, 526, -40.235695, 70.53665, 40.235695, -70.53665, 730, 320, -24.83685, 85.9355, 24.83685, -85.9355, 1034, 282, 58.842976, -9.917356, -58.842976, 9.917356, 718, 68, 50.247932, -1.983471, -50.247932, 1.983471, 507, 274, 61.118023, 0.081386566, -61.118023, -0.081386566, 353, 115, -5.950413, -157.35536, 5.950413, 157.35536, 126, 392, -82.32, 10.647271, 82.32, -10.647271, 443, 449, 0, 0, 0, 0, 749, 537, -18.181818, 61.81818, 18.181818, -61.81818, 872, 526)
+}
+point_count = 10
 
 [node name="track1" type="Node" unique_id=647559077]
 script = ExtResource("1_7fxw1")
@@ -29,5 +36,24 @@ polygon = PackedVector2Array(509, 187, 541, 151, 583, 102, 647, 43, 695, 20, 732
 
 [node name="inside collision" type="CollisionPolygon2D" parent="track_collision" unique_id=1402515962]
 polygon = PackedVector2Array(346, 180, 410, 267, 448, 313, 476, 328, 500, 333, 522, 331, 552, 316, 587, 282, 708, 154, 728, 140, 748, 148, 840, 187, 903, 220, 941, 248, 791, 228, 745, 232, 695, 260, 666, 306, 665, 354, 682, 398, 727, 450, 764, 474, 702, 452, 593, 415, 508, 395, 439, 395, 399, 397, 346, 407, 252, 422, 201, 418, 189, 381, 204, 325, 244, 260, 295, 212)
+
+[node name="track path" type="Path2D" parent="." unique_id=1298881647]
+curve = SubResource("Curve2D_7fxw1")
+
+[node name="Oil_Dropper" parent="track path" unique_id=570713592 node_paths=PackedStringArray("oil_container") instance=ExtResource("5_6dgdl")]
+position = Vector2(827.1255, 442.96686)
+rotation = -2.4522884
+progress = 100.0
+debug = false
+oil_container = NodePath("../../oil_container")
+
+[node name="Oil_Dropper2" parent="track path" unique_id=991340226 node_paths=PackedStringArray("oil_container") instance=ExtResource("5_6dgdl")]
+position = Vector2(827.1255, 442.96686)
+rotation = -2.4522884
+progress = 100.0
+debug = false
+oil_container = NodePath("../../oil_container")
+
+[node name="oil_container" type="Node" parent="." unique_id=1420500395]
 
 [connection signal="area_entered" from="track_collision" to="." method="_on_track_collision_area_entered"]

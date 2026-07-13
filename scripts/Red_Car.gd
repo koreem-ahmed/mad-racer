@@ -9,11 +9,13 @@ class_name Red_car
 @export var min_steering_factor:float = 0.5
 @export var bounce_time: float = 0.8
 @export var bounce_force: float = 30.0
+@onready var chrasheffect: CPUParticles2D = $Chrasheffect
 
 var _throttle: float = 0.0
 var _steer: float = 0.0
 var _velocity: float = 0.0
-
+var _bounce_tween: Tween
+var _bounce_target: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	pass
@@ -48,14 +50,35 @@ func _rotating(delta: float) -> void:
 	rotate(steering_factor() * delta * _steer)
 
 
-func bounce() -> void:
-	set_physics_process(false)
-	_velocity = 0.
-	position -= transform.x * bounce_force
-	await get_tree().create_timer(bounce_time).timeout	
+func bounce_done() -> void:
 	set_physics_process(true)
+	_bounce_tween = null
+	
+	
+	
+
+func bounce(dir_path: Vector2) -> void:
+	set_physics_process(false)
+	_velocity = 0.0
+	_bounce_target = position + (dir_path * bounce_force)
+	
+	if _bounce_tween and _bounce_tween.is_running():
+		_bounce_tween.kill()
+	
+	rotation_degrees = fmod(rotation_degrees, 360)
+	_bounce_tween = create_tween()
+	_bounce_tween.set_parallel()
+	_bounce_tween.tween_property(self, "position", _bounce_target, bounce_time)
+	_bounce_tween.tween_property(self, "rotation_degrees", rotation_degrees + 360.0, bounce_time)
+	_bounce_tween.set_parallel(false)
+	_bounce_tween.finished.connect(bounce_done)
+	#
+	#position -= transform.x * bounce_force
+	#await get_tree().create_timer(bounce_time).timeout	
+	#set_physics_process(true)
 
 
 
-func hit_boundry() -> void:
-	bounce()
+func hit_boundry(dir_path: Vector2) -> void:
+	chrasheffect.restart()
+	bounce(dir_path)
