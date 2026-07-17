@@ -24,11 +24,15 @@ var _bounce_tween: Tween
 var _slip_tween: Tween
 var _bounce_target: Vector2 = Vector2.ZERO
 var _state: CarState = CarState.DRIVING
-
+var _verification_count: int = 0
+var _verification_passed: Array[int] = []
 
 func _ready() -> void:
 	pass
 
+func setup(vc: int) -> void:
+	_verification_count = vc
+	pass
 
 func _process(_delta: float) -> void:
 	_throttle = Input.get_action_strength("ui_up")
@@ -139,3 +143,24 @@ func hit_oil() -> void:
 	change_state(CarState.SLIPPING)
 
 #endregion
+
+
+func lap_completed() -> void:
+	print("lap completed")
+
+
+func hit_verification(verification_id: int) -> void:
+	if verification_id not in _verification_passed:
+		_verification_passed.append(verification_id)
+		pass
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
