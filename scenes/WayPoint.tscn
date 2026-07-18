@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://tooydjghqo3h"]
+
+[ext_resource type="Script" uid="uid://chslyv5q34lbf" path="res://scripts/WayPoint.gd" id="1_i4lya"]
+[ext_resource type="FontFile" uid="uid://iquj162s48bs" path="res://assets/font/PressStart2P-Regular.ttf" id="2_e15el"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ucng7"]
+font = ExtResource("2_e15el")
+font_size = 18
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="WayPoint" type="Node2D" unique_id=1182803477]
+script = ExtResource("1_i4lya")
+
+[node name="Right_Collision" type="RayCast2D" parent="." unique_id=86910332]
+target_position = Vector2(150, 0)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Left_Collision" type="RayCast2D" parent="." unique_id=132128608]
+target_position = Vector2(-150, 0)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Label_for_debug" type="Label" parent="." unique_id=815006212]
+offset_left = -17.0
+offset_top = -9.0
+offset_right = 19.0
+offset_bottom = 11.0
+text = "00"
+label_settings = SubResource("LabelSettings_ucng7")
+horizontal_alignment = 1
+vertical_alignment = 1

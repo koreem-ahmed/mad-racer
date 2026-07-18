@@ -6,6 +6,8 @@ class_name Red_car
 
 enum CarState {DRIVING, BOUNCING, SLIPPING}
 
+@export var car_name: String = "Light Mcqueen"
+@export var car_number: int = 0
 @export var max_speed:float = 380.0
 @export var friction:float = 300.0
 @export var acceleration:float = 150.0
@@ -26,6 +28,7 @@ var _bounce_target: Vector2 = Vector2.ZERO
 var _state: CarState = CarState.DRIVING
 var _verification_count: int = 0
 var _verification_passed: Array[int] = []
+var lap_time: float = 0.0
 
 func _ready() -> void:
 	pass
@@ -34,7 +37,8 @@ func setup(vc: int) -> void:
 	_verification_count = vc
 	pass
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	lap_time += delta
 	_throttle = Input.get_action_strength("ui_up")
 	_steer = Input.get_axis("ui_left", "ui_right")
 
@@ -146,7 +150,12 @@ func hit_oil() -> void:
 
 
 func lap_completed() -> void:
-	print("lap completed")
+	if _verification_count == _verification_passed.size():
+		var lcd: LapCompleteData = LapCompleteData.new(self, lap_time)
+		print("Lap _completed %s" % lcd)
+		EventHub.emit_on_lap_completed(lcd)
+	_verification_passed.clear()
+	lap_time = 0.0
 
 
 func hit_verification(verification_id: int) -> void:

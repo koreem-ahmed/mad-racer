@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://cyyxdym0ykal" path="res://scenes/Oil.tscn" id="6_osia5"]
 [ext_resource type="Texture2D" uid="uid://dec3bup5l0rha" path="res://assets/levels/Images/FinishLine.png" id="7_olayt"]
 [ext_resource type="PackedScene" uid="uid://mqtjdmq724f8" path="res://scenes/VerificationLayer.tscn" id="8_52pn0"]
+[ext_resource type="PackedScene" uid="uid://cqs0ea73r6msh" path="res://scenes/RaceController.tscn" id="9_w4h7v"]
+[ext_resource type="PackedScene" uid="uid://tooydjghqo3h" path="res://scenes/WayPoint.tscn" id="10_vsb8j"]
 
 [sub_resource type="Curve2D" id="Curve2D_7fxw1"]
 _data = {
@@ -32,6 +34,7 @@ scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_0orj5")
 
 [node name="track_collision" type="Area2D" parent="." unique_id=130510195]
+collision_layer = 2
 
 [node name="outside collision" type="CollisionPolygon2D" parent="track_collision" unique_id=870524395]
 polygon = PackedVector2Array(509, 187, 541, 151, 583, 102, 647, 43, 695, 20, 732, 11, 768, 25, 895, 75, 1030, 153, 1075, 211, 1086, 273, 1074, 315, 1030, 358, 982, 369, 914, 372, 865, 367, 800, 350, 830, 371, 850, 386, 939, 452, 961, 489, 966, 528, 959, 563, 942, 592, 907, 616, 858, 623, 745, 598, 616, 553, 493, 516, 390, 527, 310, 538, 254, 545, 177, 540, 141, 524, 114, 505, 85, 466, 72, 422, 66, 378, 68, 338, 94, 263, 151, 177, 227, 108, 318, 52, 367, 41, 407, 55, 450, 108, 503, 185, 507, -17, 165, -13, 9, 330, 116, 639, 1195, 669, 1182, -3, 516, -16)
@@ -94,6 +97,14 @@ rotation = -2.8756201
 [node name="red_car" parent="Cars holder" unique_id=323058446 instance=ExtResource("3_7fxw1")]
 position = Vector2(523, 460.00003)
 scale = Vector2(0.8, 0.8)
+
+[node name="RaceController" parent="." unique_id=1426071283 instance=ExtResource("9_w4h7v")]
+
+[node name="WayPoints holder" type="Node" parent="." unique_id=1157639865]
+
+[node name="WayPoint" parent="WayPoints holder" unique_id=1182803477 instance=ExtResource("10_vsb8j")]
+position = Vector2(601, 478.99994)
+rotation = -1.3105952
 
 [connection signal="area_entered" from="track_collision" to="." method="_on_track_collision_area_entered"]
 [connection signal="area_entered" from="Start_Line" to="." method="_on_start_line_area_entered"]
