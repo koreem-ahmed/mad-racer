@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="mad racer"
-run/main_scene="res://scenes/Tracks/track1.tscn"
+run/main_scene="res://scenes/Tracks/Track.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 
 [autoload]

@@ -26,6 +26,12 @@ func setup() -> void:
 	for car in cars_holder.get_children():
 		if car is PlayerCar:
 			car.setup(verification_holder.get_children().size())
+		if car is CPU_Car:
+			car.set_next_waypoint(track_processor.first_waypoint)
+
+
+
+
 
 
 func _path_direction(from_pos: Vector2) -> Vector2:

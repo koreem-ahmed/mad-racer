@@ -25,6 +25,7 @@ collide_with_areas = true
 collide_with_bodies = false
 
 [node name="Label_for_debug" type="Label" parent="." unique_id=815006212]
+visible = false
 offset_left = -17.0
 offset_top = -9.0
 offset_right = 19.0

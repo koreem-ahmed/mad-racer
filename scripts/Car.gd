@@ -6,6 +6,7 @@ class_name Car
 
 enum CarState {DRIVING, BOUNCING, SLIPPING}
 
+@export var car_texture: Texture2D = preload("res://assets/levels/Images/CarRed.png")
 @export var car_name: String = "Light Mcqueen"
 @export var car_number: int = 0
 @export var bounce_time: float = 0.8
@@ -13,6 +14,7 @@ enum CarState {DRIVING, BOUNCING, SLIPPING}
 @export var slipping_speed_range: Vector2 = Vector2(0.2, 0.5)
 
 @onready var chrasheffect: CPUParticles2D = $Chrasheffect
+@onready var car_sprite: Sprite2D = $Car_Sprite
 
 
 var _velocity: float = 0.0
@@ -23,7 +25,7 @@ var _state: CarState = CarState.DRIVING
 var lap_time: float = 0.0
 
 func _ready() -> void:
-	pass
+	car_sprite.texture = car_texture
 
 
 func _process(delta: float) -> void:

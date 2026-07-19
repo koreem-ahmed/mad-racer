@@ -1,14 +1,16 @@
 [gd_scene format=3 uid="uid://3qtcfffg8q0c"]
 
-[ext_resource type="Texture2D" uid="uid://c1m5vk3rejca7" path="res://assets/levels/Images/Monaco.png" id="1_0orj5"]
-[ext_resource type="Script" uid="uid://iqej1grh57xd" path="res://scripts/Track.gd" id="1_7fxw1"]
-[ext_resource type="Texture2D" uid="uid://2msta3ane5h5" path="res://assets/levels/Images/WaterBg.png" id="1_kskby"]
-[ext_resource type="PackedScene" uid="uid://bvun3v1h17op6" path="res://scenes/OilDropper.tscn" id="5_6dgdl"]
-[ext_resource type="PackedScene" uid="uid://drq8exgion2m4" path="res://scenes/Track Processor/TrackProcessor.tscn" id="5_vsb8j"]
-[ext_resource type="Texture2D" uid="uid://dec3bup5l0rha" path="res://assets/levels/Images/FinishLine.png" id="7_olayt"]
-[ext_resource type="PackedScene" uid="uid://mqtjdmq724f8" path="res://scenes/VerificationLayer.tscn" id="8_52pn0"]
-[ext_resource type="PackedScene" uid="uid://doox71dhvje0x" path="res://scenes/PlayerCar.tscn" id="8_w4h7v"]
-[ext_resource type="PackedScene" uid="uid://cqs0ea73r6msh" path="res://scenes/RaceController.tscn" id="9_w4h7v"]
+[ext_resource type="Script" uid="uid://iqej1grh57xd" path="res://scripts/Track.gd" id="1_1jyu2"]
+[ext_resource type="Texture2D" uid="uid://2msta3ane5h5" path="res://assets/levels/Images/WaterBg.png" id="2_63hka"]
+[ext_resource type="Texture2D" uid="uid://c1m5vk3rejca7" path="res://assets/levels/Images/Monaco.png" id="3_xosaf"]
+[ext_resource type="PackedScene" uid="uid://bvun3v1h17op6" path="res://scenes/OilDropper.tscn" id="4_0y6yq"]
+[ext_resource type="PackedScene" uid="uid://drq8exgion2m4" path="res://scenes/Track Processor/TrackProcessor.tscn" id="5_q1gcb"]
+[ext_resource type="Texture2D" uid="uid://dec3bup5l0rha" path="res://assets/levels/Images/FinishLine.png" id="6_uriw6"]
+[ext_resource type="PackedScene" uid="uid://mqtjdmq724f8" path="res://scenes/VerificationLayer.tscn" id="7_182rf"]
+[ext_resource type="PackedScene" uid="uid://doox71dhvje0x" path="res://scenes/PlayerCar.tscn" id="8_u5gbe"]
+[ext_resource type="PackedScene" uid="uid://dvaolyrr6a1gs" path="res://scenes/CpuCar.tscn" id="9_63hka"]
+[ext_resource type="PackedScene" uid="uid://cqs0ea73r6msh" path="res://scenes/RaceController.tscn" id="9_4784h"]
+[ext_resource type="Texture2D" uid="uid://dr8u06xrl4yv6" path="res://assets/levels/Images/CarPurple.png" id="10_xosaf"]
 
 [sub_resource type="Curve2D" id="Curve2D_7fxw1"]
 _data = {
@@ -19,18 +21,18 @@ point_count = 12
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_52pn0"]
 size = Vector2(113.52194, 16)
 
-[node name="track1" type="Node" unique_id=647559077]
-script = ExtResource("1_7fxw1")
+[node name="Track" type="Node" unique_id=647559077]
+script = ExtResource("1_1jyu2")
 
 [node name="bakcground" type="Sprite2D" parent="." unique_id=460417291]
 position = Vector2(591, 319)
 scale = Vector2(1.0625, 1.0625)
-texture = ExtResource("1_kskby")
+texture = ExtResource("2_63hka")
 
 [node name="track_img" type="Sprite2D" parent="." unique_id=1767059704]
 position = Vector2(578.00006, 324.00003)
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("1_0orj5")
+texture = ExtResource("3_xosaf")
 
 [node name="track_collision" type="Area2D" parent="." unique_id=130510195]
 collision_layer = 2
@@ -44,21 +46,21 @@ polygon = PackedVector2Array(346, 180, 410, 267, 448, 313, 476, 328, 500, 333, 5
 [node name="track path" type="Path2D" parent="." unique_id=1298881647]
 curve = SubResource("Curve2D_7fxw1")
 
-[node name="Oil_Dropper" parent="track path" unique_id=570713592 node_paths=PackedStringArray("oil_container") instance=ExtResource("5_6dgdl")]
+[node name="Oil_Dropper" parent="track path" unique_id=570713592 node_paths=PackedStringArray("oil_container") instance=ExtResource("4_0y6yq")]
 position = Vector2(753.55615, 529.39764)
 rotation = 0.25029528
 progress = 100.0
 debug = false
 oil_container = NodePath("../../oil_container")
 
-[node name="Oil_Dropper2" parent="track path" unique_id=991340226 node_paths=PackedStringArray("oil_container") instance=ExtResource("5_6dgdl")]
+[node name="Oil_Dropper2" parent="track path" unique_id=991340226 node_paths=PackedStringArray("oil_container") instance=ExtResource("4_0y6yq")]
 position = Vector2(753.55615, 529.39764)
 rotation = 0.25029528
 progress = 100.0
 debug = false
 oil_container = NodePath("../../oil_container")
 
-[node name="TrackProcessor" parent="track path" unique_id=1278362240 instance=ExtResource("5_vsb8j")]
+[node name="TrackProcessor" parent="track path" unique_id=1278362240 instance=ExtResource("5_q1gcb")]
 position = Vector2(658, 500)
 rotation = 0.3398851
 
@@ -72,7 +74,7 @@ collision_layer = 0
 [node name="Sprite2D" type="Sprite2D" parent="Start_Line" unique_id=1806736135]
 position = Vector2(1.9101944, 0)
 scale = Vector2(0.88108313, 1)
-texture = ExtResource("7_olayt")
+texture = ExtResource("6_uriw6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Start_Line" unique_id=495660547]
 position = Vector2(1.757019, 0)
@@ -80,24 +82,33 @@ shape = SubResource("RectangleShape2D_52pn0")
 
 [node name="Verification holder" type="Node" parent="." unique_id=585834861]
 
-[node name="Verification" parent="Verification holder" unique_id=1065954631 instance=ExtResource("8_52pn0")]
+[node name="Verification" parent="Verification holder" unique_id=1065954631 instance=ExtResource("7_182rf")]
 position = Vector2(763, 397.99994)
 rotation = -0.39891955
 
-[node name="Verification2" parent="Verification holder" unique_id=1934791953 instance=ExtResource("8_52pn0")]
+[node name="Verification2" parent="Verification holder" unique_id=1934791953 instance=ExtResource("7_182rf")]
 position = Vector2(563.99994, 222.99998)
 rotation = -2.082533
 
-[node name="Verification3" parent="Verification holder" unique_id=714093725 instance=ExtResource("8_52pn0")]
+[node name="Verification3" parent="Verification holder" unique_id=714093725 instance=ExtResource("7_182rf")]
 position = Vector2(149, 296)
 rotation = -2.8756201
 
 [node name="Cars holder" type="Node" parent="." unique_id=1837840757]
 
-[node name="Player Car" parent="Cars holder" unique_id=323058446 instance=ExtResource("8_w4h7v")]
-position = Vector2(445, 467)
+[node name="Player Car" parent="Cars holder" unique_id=323058446 instance=ExtResource("8_u5gbe")]
+position = Vector2(673, 527)
+car_name = "Light Mcqueen"
+car_number = 0
+bounce_time = 0.8
+bounce_force = 30.0
+slipping_speed_range = Vector2(0.2, 0.5)
 
-[node name="RaceController" parent="." unique_id=1426071283 instance=ExtResource("9_w4h7v")]
+[node name="CPU Car" parent="Cars holder" unique_id=860932081 instance=ExtResource("9_63hka")]
+position = Vector2(643, 493)
+car_texture = ExtResource("10_xosaf")
+
+[node name="RaceController" parent="." unique_id=1426071283 instance=ExtResource("9_4784h")]
 
 [node name="WayPoints holder" type="Node" parent="." unique_id=1157639865]
 

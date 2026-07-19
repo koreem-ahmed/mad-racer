@@ -18,6 +18,13 @@ const WAYPOINT = preload("res://scenes/WayPoint.tscn")
 var _waypoints: Array[Waypoint]
 
 
+var first_waypoint: Waypoint:
+	get:
+		if _waypoints.size() == 0:
+			printerr("Track_Proccessor: First waypoint missing") 
+			return null
+		return _waypoints[0]
+
 func connect_waypoints() -> void:
 	var total_wp: int = _waypoints.size()
 	for i in range(total_wp):
