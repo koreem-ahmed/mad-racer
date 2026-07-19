@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://doox71dhvje0x"]
+
+[ext_resource type="PackedScene" uid="uid://dndn07wuu1vqd" path="res://scenes/Car.tscn" id="1_2wfw4"]
+[ext_resource type="Script" uid="uid://dtrggyob8ofam" path="res://scripts/Player_Car.gd" id="2_ryxr2"]
+
+[node name="Player Car" unique_id=323058446 instance=ExtResource("1_2wfw4")]
+script = ExtResource("2_ryxr2")
+max_speed = 380.0
+friction = 300.0
+acceleration = 150.0
+steering_power = 6.0
+min_steering_factor = 0.5
+car_name = null
+car_number = null
+bounce_time = null
+bounce_force = null
+slipping_speed_range = null

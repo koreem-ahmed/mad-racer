@@ -5,9 +5,9 @@ extends Object
 class_name LapCompleteData
 
 var lap_time: float
-var car: Red_car
+var car: Car
 
-func _init(p_car: Red_car, lt:  float) -> void:
+func _init(p_car: Car, lt:  float) -> void:
 	car = p_car
 	lap_time = lt
 	

@@ -1,72 +1,36 @@
 extends Area2D
 
 
-class_name Red_car
+class_name Car
 
 
 enum CarState {DRIVING, BOUNCING, SLIPPING}
 
 @export var car_name: String = "Light Mcqueen"
 @export var car_number: int = 0
-@export var max_speed:float = 380.0
-@export var friction:float = 300.0
-@export var acceleration:float = 150.0
-@export var steering_power:float = 6.0
-@export var min_steering_factor:float = 0.5
 @export var bounce_time: float = 0.8
 @export var bounce_force: float = 30.0
 @export var slipping_speed_range: Vector2 = Vector2(0.2, 0.5)
 
 @onready var chrasheffect: CPUParticles2D = $Chrasheffect
 
-var _throttle: float = 0.0
-var _steer: float = 0.0
+
 var _velocity: float = 0.0
 var _bounce_tween: Tween
 var _slip_tween: Tween
 var _bounce_target: Vector2 = Vector2.ZERO
 var _state: CarState = CarState.DRIVING
-var _verification_count: int = 0
-var _verification_passed: Array[int] = []
 var lap_time: float = 0.0
 
 func _ready() -> void:
 	pass
 
-func setup(vc: int) -> void:
-	_verification_count = vc
-	pass
 
 func _process(delta: float) -> void:
 	lap_time += delta
-	_throttle = Input.get_action_strength("ui_up")
-	_steer = Input.get_axis("ui_left", "ui_right")
 
 
-func _physics_process(delta: float) -> void:
-	if _state != CarState.DRIVING: return
-	_throttling(delta)
-	_rotating(delta)
-	position += transform.x * _velocity * delta
 
-func _throttling(delta: float) -> void:
-	if _throttle > 0.0:
-		_velocity += acceleration * delta
-	else:
-		_velocity -= friction * delta
-	
-	_velocity = clamp(_velocity, 0.0, max_speed)
-
-func steering_factor() -> float:
-	return clamp(
-		1.0 - pow(_velocity/max_speed, 2.0),
-		min_steering_factor,
-		1.0
-	) * steering_power
-	
-
-func _rotating(delta: float) -> void:
-	rotate(steering_factor() * delta * _steer)
 
 
 #region state
@@ -150,26 +114,4 @@ func hit_oil() -> void:
 
 
 func lap_completed() -> void:
-	if _verification_count == _verification_passed.size():
-		var lcd: LapCompleteData = LapCompleteData.new(self, lap_time)
-		print("Lap _completed %s" % lcd)
-		EventHub.emit_on_lap_completed(lcd)
-	_verification_passed.clear()
 	lap_time = 0.0
-
-
-func hit_verification(verification_id: int) -> void:
-	if verification_id not in _verification_passed:
-		_verification_passed.append(verification_id)
-		pass
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	

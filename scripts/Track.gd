@@ -5,15 +5,28 @@ class_name Track
 @onready var track_path: Path2D = $"track path"
 @onready var cars_holder: Node = $"Cars holder"
 @onready var verification_holder: Node = $"Verification holder"
+@onready var track_processor: TrackProcessor = $"track path/TrackProcessor"
+@onready var way_points_holder: Node = $"WayPoints holder"
 
 var _track_curve: Curve2D
 
 func _ready() -> void:
+	await setup()
+
+
+
+func setup() -> void:
 	_track_curve = track_path.curve
 	
+	track_processor.build_waypoin_data(way_points_holder)
+	
+	await track_processor.biuld_completed
+	print("track_processor.biuld_completed")
+	
 	for car in cars_holder.get_children():
-		if car is Red_car:
+		if car is PlayerCar:
 			car.setup(verification_holder.get_children().size())
+
 
 func _path_direction(from_pos: Vector2) -> Vector2:
 	var closest_offset: float = _track_curve.get_closest_offset(from_pos)
@@ -22,9 +35,9 @@ func _path_direction(from_pos: Vector2) -> Vector2:
 
 
 func _on_track_collision_area_entered(area: Area2D) -> void:
-	if area is Red_car: area.hit_boundry(_path_direction(area.position))
+	if area is Car: area.hit_boundry(_path_direction(area.position))
 	
 
 
 func _on_start_line_area_entered(area: Area2D) -> void:
-	if area is Red_car: area.lap_completed()
+	if area is Car: area.lap_completed()

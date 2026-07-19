@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dvaolyrr6a1gs"]
+
+[ext_resource type="PackedScene" uid="uid://dndn07wuu1vqd" path="res://scenes/Car.tscn" id="1_wx410"]
+[ext_resource type="Script" uid="uid://dc0sm748xqknj" path="res://scripts/CpuCar.gd" id="2_gyhda"]
+
+[node name="CPU Car" unique_id=323058446 instance=ExtResource("1_wx410")]
+script = ExtResource("2_gyhda")

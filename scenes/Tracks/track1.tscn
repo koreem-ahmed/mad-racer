@@ -1,21 +1,20 @@
 [gd_scene format=3 uid="uid://3qtcfffg8q0c"]
 
 [ext_resource type="Texture2D" uid="uid://c1m5vk3rejca7" path="res://assets/levels/Images/Monaco.png" id="1_0orj5"]
-[ext_resource type="Script" uid="uid://iqej1grh57xd" path="res://scripts/Track_1.gd" id="1_7fxw1"]
+[ext_resource type="Script" uid="uid://iqej1grh57xd" path="res://scripts/Track.gd" id="1_7fxw1"]
 [ext_resource type="Texture2D" uid="uid://2msta3ane5h5" path="res://assets/levels/Images/WaterBg.png" id="1_kskby"]
-[ext_resource type="PackedScene" uid="uid://dndn07wuu1vqd" path="res://scenes/RedCar.tscn" id="3_7fxw1"]
 [ext_resource type="PackedScene" uid="uid://bvun3v1h17op6" path="res://scenes/OilDropper.tscn" id="5_6dgdl"]
-[ext_resource type="PackedScene" uid="uid://cyyxdym0ykal" path="res://scenes/Oil.tscn" id="6_osia5"]
+[ext_resource type="PackedScene" uid="uid://drq8exgion2m4" path="res://scenes/Track Processor/TrackProcessor.tscn" id="5_vsb8j"]
 [ext_resource type="Texture2D" uid="uid://dec3bup5l0rha" path="res://assets/levels/Images/FinishLine.png" id="7_olayt"]
 [ext_resource type="PackedScene" uid="uid://mqtjdmq724f8" path="res://scenes/VerificationLayer.tscn" id="8_52pn0"]
+[ext_resource type="PackedScene" uid="uid://doox71dhvje0x" path="res://scenes/PlayerCar.tscn" id="8_w4h7v"]
 [ext_resource type="PackedScene" uid="uid://cqs0ea73r6msh" path="res://scenes/RaceController.tscn" id="9_w4h7v"]
-[ext_resource type="PackedScene" uid="uid://tooydjghqo3h" path="res://scenes/WayPoint.tscn" id="10_vsb8j"]
 
 [sub_resource type="Curve2D" id="Curve2D_7fxw1"]
 _data = {
-"points": PackedVector2Array(-22.545454, 84.36363, 22.545454, -84.36363, 872, 526, -40.235695, 70.53665, 40.235695, -70.53665, 730, 320, -24.83685, 85.9355, 24.83685, -85.9355, 1034, 282, 58.842976, -9.917356, -58.842976, 9.917356, 718, 68, 50.247932, -1.983471, -50.247932, 1.983471, 507, 274, 61.118023, 0.081386566, -61.118023, -0.081386566, 353, 115, -5.950413, -157.35536, 5.950413, 157.35536, 126, 392, -82.32, 10.647271, 82.32, -10.647271, 443, 449, 0, 0, 0, 0, 749, 537, -18.181818, 61.81818, 18.181818, -61.81818, 872, 526)
+"points": PackedVector2Array(0, 0, 0, 0, 658, 500, -29.483261, 7.090911, 29.483261, -7.090911, 815, 538, 26.578003, 53.659313, -26.578003, -53.659313, 832, 447, -30.555695, 86.376656, 30.555695, -86.376656, 738, 318, -24.83685, 85.9355, 24.83685, -85.9355, 1034, 282, 58.842976, -9.917356, -58.842976, 9.917356, 718, 68, 50.247932, -1.983471, -50.247932, 1.983471, 507, 274, 61.118023, 0.081386566, -61.118023, -0.081386566, 353, 115, -5.950413, -157.35536, 5.950413, 157.35536, 126, 392, -82.32, 10.647271, 82.32, -10.647271, 442, 459, -62.59639, -18.683239, 0, 0, 643, 494, 0, 0, 0, 0, 658, 500)
 }
-point_count = 10
+point_count = 12
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_52pn0"]
 size = Vector2(113.52194, 16)
@@ -40,32 +39,33 @@ collision_layer = 2
 polygon = PackedVector2Array(509, 187, 541, 151, 583, 102, 647, 43, 695, 20, 732, 11, 768, 25, 895, 75, 1030, 153, 1075, 211, 1086, 273, 1074, 315, 1030, 358, 982, 369, 914, 372, 865, 367, 800, 350, 830, 371, 850, 386, 939, 452, 961, 489, 966, 528, 959, 563, 942, 592, 907, 616, 858, 623, 745, 598, 616, 553, 493, 516, 390, 527, 310, 538, 254, 545, 177, 540, 141, 524, 114, 505, 85, 466, 72, 422, 66, 378, 68, 338, 94, 263, 151, 177, 227, 108, 318, 52, 367, 41, 407, 55, 450, 108, 503, 185, 507, -17, 165, -13, 9, 330, 116, 639, 1195, 669, 1182, -3, 516, -16)
 
 [node name="inside collision" type="CollisionPolygon2D" parent="track_collision" unique_id=1402515962]
-polygon = PackedVector2Array(346, 180, 410, 267, 448, 313, 476, 328, 500, 333, 522, 331, 552, 316, 587, 282, 708, 154, 728, 140, 748, 148, 840, 187, 903, 220, 941, 248, 791, 228, 745, 232, 695, 260, 666, 306, 665, 354, 682, 398, 727, 450, 764, 474, 702, 452, 593, 415, 508, 395, 439, 395, 399, 397, 346, 407, 252, 422, 201, 418, 189, 381, 204, 325, 244, 260, 295, 212)
+polygon = PackedVector2Array(346, 180, 410, 267, 448, 313, 476, 328, 500, 333, 522, 331, 552, 316, 587, 282, 708, 154, 728, 140, 748, 148, 840, 187, 903, 220, 941, 248, 791, 228, 745, 232, 695, 260, 666, 306, 665, 354, 682, 398, 727, 450, 756, 467, 750, 468, 735, 463, 593, 415, 508, 395, 439, 395, 399, 397, 346, 407, 252, 422, 201, 418, 189, 381, 204, 325, 244, 260, 295, 212)
 
 [node name="track path" type="Path2D" parent="." unique_id=1298881647]
 curve = SubResource("Curve2D_7fxw1")
 
 [node name="Oil_Dropper" parent="track path" unique_id=570713592 node_paths=PackedStringArray("oil_container") instance=ExtResource("5_6dgdl")]
-position = Vector2(827.1255, 442.96686)
-rotation = -2.4522884
+position = Vector2(753.55615, 529.39764)
+rotation = 0.25029528
 progress = 100.0
 debug = false
 oil_container = NodePath("../../oil_container")
 
 [node name="Oil_Dropper2" parent="track path" unique_id=991340226 node_paths=PackedStringArray("oil_container") instance=ExtResource("5_6dgdl")]
-position = Vector2(827.1255, 442.96686)
-rotation = -2.4522884
+position = Vector2(753.55615, 529.39764)
+rotation = 0.25029528
 progress = 100.0
 debug = false
 oil_container = NodePath("../../oil_container")
 
+[node name="TrackProcessor" parent="track path" unique_id=1278362240 instance=ExtResource("5_vsb8j")]
+position = Vector2(658, 500)
+rotation = 0.3398851
+
 [node name="oil_container" type="Node" parent="." unique_id=1420500395]
 
-[node name="Oil" parent="oil_container" unique_id=1737089996 instance=ExtResource("6_osia5")]
-position = Vector2(686, 505)
-
 [node name="Start_Line" type="Area2D" parent="." unique_id=2084733351]
-position = Vector2(641.99994, 496.99997)
+position = Vector2(697, 518)
 rotation = -1.208423
 collision_layer = 0
 
@@ -94,17 +94,12 @@ rotation = -2.8756201
 
 [node name="Cars holder" type="Node" parent="." unique_id=1837840757]
 
-[node name="red_car" parent="Cars holder" unique_id=323058446 instance=ExtResource("3_7fxw1")]
-position = Vector2(523, 460.00003)
-scale = Vector2(0.8, 0.8)
+[node name="Player Car" parent="Cars holder" unique_id=323058446 instance=ExtResource("8_w4h7v")]
+position = Vector2(445, 467)
 
 [node name="RaceController" parent="." unique_id=1426071283 instance=ExtResource("9_w4h7v")]
 
 [node name="WayPoints holder" type="Node" parent="." unique_id=1157639865]
-
-[node name="WayPoint" parent="WayPoints holder" unique_id=1182803477 instance=ExtResource("10_vsb8j")]
-position = Vector2(601, 478.99994)
-rotation = -1.3105952
 
 [connection signal="area_entered" from="track_collision" to="." method="_on_track_collision_area_entered"]
 [connection signal="area_entered" from="Start_Line" to="." method="_on_start_line_area_entered"]
