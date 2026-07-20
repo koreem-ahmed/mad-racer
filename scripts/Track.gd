@@ -24,7 +24,7 @@ func setup() -> void:
 	print("track_processor.biuld_completed")
 	
 	for car in cars_holder.get_children():
-		if car is PlayerCar:
+		if car is Car:
 			car.setup(verification_holder.get_children().size())
 		if car is CPU_Car:
 			car.set_next_waypoint(track_processor.first_waypoint)

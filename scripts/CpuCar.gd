@@ -6,6 +6,8 @@ class_name CPU_Car
 
 @export var debug: bool = true
 @export var waypoint_distance: float = 20.0
+@export var max_speed_limit: float = 350.0
+@export var min_speed_limit: float = 300.0
 
 @onready var target_sprite: Sprite2D = $"Target sprite"
 
@@ -22,6 +24,7 @@ var _next_waypoint: Waypoint
 
 func _ready() -> void:
 	target_sprite.visible = debug
+	target_speed = randf_range(min_speed_limit , max_speed_limit)
 	
 	super()
 

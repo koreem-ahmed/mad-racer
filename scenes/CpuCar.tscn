@@ -8,9 +8,11 @@
 script = ExtResource("2_gyhda")
 debug = false
 waypoint_distance = 20.0
+max_speed_limit = 350.0
+min_speed_limit = 300.0
 
 [node name="Target sprite" type="Sprite2D" parent="." index="3" unique_id=458016957]
 modulate = Color(1, 0.11372549, 0.10980392, 1)
 top_level = true
-scale = Vector2(0.15, 0.15)
+scale = Vector2(0.05, 0.05)
 texture = ExtResource("3_bkl7t")

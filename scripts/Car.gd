@@ -4,7 +4,7 @@ extends Area2D
 class_name Car
 
 
-enum CarState {DRIVING, BOUNCING, SLIPPING}
+enum CarState {WAITING, DRIVING, BOUNCING, SLIPPING}
 
 @export var car_texture: Texture2D = preload("res://assets/levels/Images/CarRed.png")
 @export var car_name: String = "Light Mcqueen"
@@ -21,17 +21,32 @@ var _velocity: float = 0.0
 var _bounce_tween: Tween
 var _slip_tween: Tween
 var _bounce_target: Vector2 = Vector2.ZERO
-var _state: CarState = CarState.DRIVING
+var _state: CarState = CarState.WAITING	
 var lap_time: float = 0.0
+var _verification_count: int = 0
+var _verification_passed: Array[int] = []
+
 
 func _ready() -> void:
+	EventHub.on_race_start.connect(on_race_starts)
+	set_physics_process(false)
 	car_sprite.texture = car_texture
+
+
+
+func setup(vc: int) -> void:
+	_verification_count = vc
+
+
+
+func on_race_starts() -> void:
+	change_state(CarState.DRIVING)
+
+
 
 
 func _process(delta: float) -> void:
 	lap_time += delta
-
-
 
 
 
@@ -46,6 +61,8 @@ func change_state(new_state: CarState) -> void:
 			bounce()
 		CarState.SLIPPING:
 			slipping_oil()
+		CarState.DRIVING:
+			set_physics_process(true)
 
 #endregion
 
@@ -116,4 +133,14 @@ func hit_oil() -> void:
 
 
 func lap_completed() -> void:
-	lap_time = 0.0
+	if _verification_count == _verification_passed.size():
+		var lcd: LapCompleteData = LapCompleteData.new(self, lap_time)
+		print("Lap _completed %s" % lcd)
+		EventHub.emit_on_lap_completed(lcd)
+		lap_time = 0
+	_verification_passed.clear()
+
+func hit_verification(verification_id: int) -> void:
+	if verification_id not in _verification_passed:
+		_verification_passed.append(verification_id)
+	
