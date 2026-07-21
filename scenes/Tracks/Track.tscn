@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://drq8exgion2m4" path="res://scenes/Track Processor/TrackProcessor.tscn" id="5_q1gcb"]
 [ext_resource type="Texture2D" uid="uid://dec3bup5l0rha" path="res://assets/levels/Images/FinishLine.png" id="6_uriw6"]
 [ext_resource type="PackedScene" uid="uid://mqtjdmq724f8" path="res://scenes/VerificationLayer.tscn" id="7_182rf"]
-[ext_resource type="PackedScene" uid="uid://doox71dhvje0x" path="res://scenes/PlayerCar.tscn" id="8_u5gbe"]
 [ext_resource type="PackedScene" uid="uid://dvaolyrr6a1gs" path="res://scenes/CpuCar.tscn" id="9_63hka"]
 [ext_resource type="PackedScene" uid="uid://cqs0ea73r6msh" path="res://scenes/RaceController.tscn" id="9_4784h"]
 [ext_resource type="Texture2D" uid="uid://dlry4iqrl31mt" path="res://assets/levels/Images/CarGreen.png" id="10_q1gcb"]
@@ -99,15 +98,6 @@ rotation = -2.8756201
 
 [node name="Cars holder" type="Node" parent="." unique_id=1837840757]
 
-[node name="Player Car" parent="Cars holder" unique_id=323058446 instance=ExtResource("8_u5gbe")]
-position = Vector2(626, 518)
-rotation = 0.30986735
-car_name = "Light Mcqueen"
-car_number = 0
-bounce_time = 0.8
-bounce_force = 30.0
-slipping_speed_range = Vector2(0.2, 0.5)
-
 [node name="CPU Car" parent="Cars holder" unique_id=860932081 instance=ExtResource("9_63hka")]
 position = Vector2(565.99994, 499)
 rotation = 0.34785226
@@ -134,12 +124,14 @@ car_texture = ExtResource("12_uriw6")
 car_name = "Cal Weathers"
 
 [node name="RaceController" parent="." unique_id=1426071283 instance=ExtResource("9_4784h")]
+total_laps = 2
 
 [node name="WayPoints holder" type="Node" parent="." unique_id=1157639865]
 
 [node name="UiCanvas" type="CanvasLayer" parent="." unique_id=1376558374]
 
 [node name="Count down" parent="UiCanvas" unique_id=2113504807 instance=ExtResource("14_uriw6")]
+waiting_time = 0.1
 
 [connection signal="area_entered" from="track_collision" to="." method="_on_track_collision_area_entered"]
 [connection signal="area_entered" from="Start_Line" to="." method="_on_start_line_area_entered"]

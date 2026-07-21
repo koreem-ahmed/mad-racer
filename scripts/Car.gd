@@ -4,7 +4,7 @@ extends Area2D
 class_name Car
 
 
-enum CarState {WAITING, DRIVING, BOUNCING, SLIPPING}
+enum CarState {WAITING, DRIVING, BOUNCING, SLIPPING, RACEOVER }
 
 @export var car_texture: Texture2D = preload("res://assets/levels/Images/CarRed.png")
 @export var car_name: String = "Light Mcqueen"
@@ -54,6 +54,7 @@ func _process(delta: float) -> void:
 
 func change_state(new_state: CarState) -> void:
 	if new_state == _state: return
+	if _state == CarState.RACEOVER: return
 	_state = new_state
 	
 	match new_state:
@@ -63,6 +64,8 @@ func change_state(new_state: CarState) -> void:
 			slipping_oil()
 		CarState.DRIVING:
 			set_physics_process(true)
+		CarState.RACEOVER:
+			set_physics_process(false)
 
 #endregion
 
@@ -137,8 +140,9 @@ func lap_completed() -> void:
 		var lcd: LapCompleteData = LapCompleteData.new(self, lap_time)
 		print("Lap _completed %s" % lcd)
 		EventHub.emit_on_lap_completed(lcd)
-		lap_time = 0
 	_verification_passed.clear()
+	lap_time = 0
+
 
 func hit_verification(verification_id: int) -> void:
 	if verification_id not in _verification_passed:

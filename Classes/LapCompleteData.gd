@@ -7,8 +7,8 @@ class_name LapCompleteData
 var lap_time: float
 var car: Car
 
-func _init(p_car: Car, lt:  float) -> void:
-	car = p_car
+func _init(_car: Car, lt:  float) -> void:
+	car = _car
 	lap_time = lt
 	
 	
