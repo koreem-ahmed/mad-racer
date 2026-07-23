@@ -8,6 +8,7 @@ class_name Track
 @onready var track_processor: TrackProcessor = $"track path/TrackProcessor"
 @onready var way_points_holder: Node = $"WayPoints holder"
 @onready var race_controller: Race_Controller = $RaceController
+@onready var game_ui: Game_Ui = $UiCanvas/GameUI
 
 var track_curve: Curve2D
 
@@ -34,6 +35,7 @@ func setup() -> void:
 	
 	race_controller.setup(cars, track_curve)
 	
+	game_ui.setup(cars)
 	
 
 

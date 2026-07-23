@@ -1,0 +1,11 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://dipt4qjr2iwdn"]
+
+[ext_resource type="FontFile" uid="uid://iquj162s48bs" path="res://assets/font/PressStart2P-Regular.ttf" id="1_meg0o"]
+
+[resource]
+font = ExtResource("1_meg0o")
+font_size = 14
+outline_size = 6
+outline_color = Color(0, 0, 0.08679448, 1)
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.76862746)

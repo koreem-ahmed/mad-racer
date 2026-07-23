@@ -42,8 +42,11 @@ func set_next_waypoint(wp: Waypoint) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if !_next_waypoint:
+		return
+	if _state == CarState.SLIPPING:
+		update_waypoint()
 	if _state != CarState.DRIVING: return
-	if !_next_waypoint: return
 	
 	
 	var ta: float = (targeted_waypoint - global_position).angle()

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://kyllddmtfqwb"]
+
+[ext_resource type="Script" uid="uid://7sh8qua4tx3b" path="res://scripts/CarUi.gd" id="1_6a4ro"]
+[ext_resource type="LabelSettings" uid="uid://dipt4qjr2iwdn" path="res://Resources/Ui_Label_14.tres" id="2_gdir7"]
+
+[node name="CarUi" type="VBoxContainer" unique_id=38253401]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_6a4ro")
+label_alignment = null
+
+[node name="Name Label" type="Label" parent="." unique_id=1289289358]
+layout_mode = 2
+text = "afkdlasf;jk"
+label_settings = ExtResource("2_gdir7")
+vertical_alignment = 1
+
+[node name="Lap Label" type="Label" parent="." unique_id=2032419380]
+layout_mode = 2
+text = "Lap 00"
+label_settings = ExtResource("2_gdir7")
+vertical_alignment = 1
+
+[node name="Last Lap Label" type="Label" parent="." unique_id=1942813343]
+layout_mode = 2
+text = "Last: 8.99"
+label_settings = ExtResource("2_gdir7")
+vertical_alignment = 1

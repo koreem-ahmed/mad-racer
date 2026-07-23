@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://gxmb4rhrqes4"]
+
+[ext_resource type="Script" uid="uid://dmhirsw18n2jy" path="res://scripts/GameUi.gd" id="1_28eo3"]
+[ext_resource type="PackedScene" uid="uid://kyllddmtfqwb" path="res://scenes/GUI/CarUi.tscn" id="2_rw1kg"]
+
+[node name="GameUi" type="Control" unique_id=1711084736]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_28eo3")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1584929913]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 18
+
+[node name="CarUi" parent="MarginContainer" unique_id=38253401 instance=ExtResource("2_rw1kg")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="CarUi2" parent="MarginContainer" unique_id=605415716 instance=ExtResource("2_rw1kg")]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+label_alignment = 2
+
+[node name="CarUi3" parent="MarginContainer" unique_id=1992949111 instance=ExtResource("2_rw1kg")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="CarUi4" parent="MarginContainer" unique_id=892141536 instance=ExtResource("2_rw1kg")]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label_alignment = 2

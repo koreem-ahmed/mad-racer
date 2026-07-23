@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dlry4iqrl31mt" path="res://assets/levels/Images/CarGreen.png" id="10_q1gcb"]
 [ext_resource type="Texture2D" uid="uid://dr8u06xrl4yv6" path="res://assets/levels/Images/CarPurple.png" id="10_xosaf"]
 [ext_resource type="Texture2D" uid="uid://pndhsqg7v7iu" path="res://assets/levels/Images/CarBlue.png" id="12_uriw6"]
+[ext_resource type="PackedScene" uid="uid://gxmb4rhrqes4" path="res://scenes/GUI/GameUi.tscn" id="14_182rf"]
 [ext_resource type="PackedScene" uid="uid://c7ikm6i8htbnt" path="res://scenes/CountDown.tscn" id="14_uriw6"]
 
 [sub_resource type="Curve2D" id="Curve2D_7fxw1"]
@@ -104,6 +105,7 @@ rotation = 0.34785226
 debug = true
 car_texture = ExtResource("10_q1gcb")
 car_name = "Franchisco"
+car_number = 1
 
 [node name="CPU Car2" parent="Cars holder" unique_id=1081522855 instance=ExtResource("9_63hka")]
 position = Vector2(648.99994, 465)
@@ -113,6 +115,7 @@ max_speed_limit = 320.0
 min_speed_limit = 250.0
 car_texture = ExtResource("10_xosaf")
 car_name = "Will Rusch"
+car_number = 2
 
 [node name="CPU Car3" parent="Cars holder" unique_id=439395284 instance=ExtResource("9_63hka")]
 position = Vector2(586.00006, 445.00003)
@@ -122,6 +125,7 @@ max_speed_limit = 260.0
 min_speed_limit = 200.0
 car_texture = ExtResource("12_uriw6")
 car_name = "Cal Weathers"
+car_number = 3
 
 [node name="RaceController" parent="." unique_id=1426071283 instance=ExtResource("9_4784h")]
 total_laps = 2
@@ -132,6 +136,8 @@ total_laps = 2
 
 [node name="Count down" parent="UiCanvas" unique_id=2113504807 instance=ExtResource("14_uriw6")]
 waiting_time = 0.1
+
+[node name="GameUI" parent="UiCanvas" unique_id=2000360718 instance=ExtResource("14_182rf")]
 
 [connection signal="area_entered" from="track_collision" to="." method="_on_track_collision_area_entered"]
 [connection signal="area_entered" from="Start_Line" to="." method="_on_start_line_area_entered"]
