@@ -7,7 +7,7 @@ class_name TrackProcessor
 signal biuld_completed
 
 
-const WAYPOINT = preload("res://scenes/WayPoint.tscn")
+const WAYPOINT = preload("res://scenes/Waypoint/WayPoint.tscn")
 
 
 @export var interval: float = 50.0

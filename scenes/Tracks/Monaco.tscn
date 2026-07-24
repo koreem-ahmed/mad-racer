@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://c5nipi7uf6chm"]
+
+[ext_resource type="PackedScene" uid="uid://3qtcfffg8q0c" path="res://scenes/Tracks/Track.tscn" id="1_ag4fu"]
+[ext_resource type="Texture2D" uid="uid://2msta3ane5h5" path="res://assets/levels/Images/WaterBg.png" id="2_wogib"]
+[ext_resource type="Texture2D" uid="uid://c1m5vk3rejca7" path="res://assets/levels/Images/Monaco.png" id="3_boyvc"]
+
+[sub_resource type="Curve2D" id="Curve2D_wogib"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 658, 500, -29.483261, 7.090911, 29.483261, -7.090911, 815, 538, 26.578003, 53.659313, -26.578003, -53.659313, 832, 447, -30.555695, 86.376656, 30.555695, -86.376656, 738, 318, -24.83685, 85.9355, 24.83685, -85.9355, 1034, 282, 58.842976, -9.917356, -58.842976, 9.917356, 718, 68, 50.247932, -1.983471, -50.247932, 1.983471, 507, 274, 61.118023, 0.081386566, -61.118023, -0.081386566, 353, 115, -5.950413, -157.35536, 5.950413, 157.35536, 126, 392, -82.32, 10.647271, 82.32, -10.647271, 442, 459, -62.59639, -18.683239, 0, 0, 643, 494, 0, 0, 0, 0, 658, 500)
+}
+point_count = 12
+
+[node name="Monaco" unique_id=647559077 instance=ExtResource("1_ag4fu")]
+
+[node name="bakcground" parent="." index="0" unique_id=460417291]
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("2_wogib")
+
+[node name="track_img" parent="." index="1" unique_id=1767059704]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_boyvc")
+
+[node name="outside collision" type="CollisionPolygon2D" parent="track_collision" parent_id_path=PackedInt32Array(130510195) index="0" unique_id=1661510894]
+polygon = PackedVector2Array(509, 187, 541, 151, 583, 102, 647, 43, 695, 20, 732, 11, 768, 25, 895, 75, 1030, 153, 1075, 211, 1086, 273, 1074, 315, 1030, 358, 982, 369, 914, 372, 865, 367, 800, 350, 830, 371, 850, 386, 939, 452, 961, 489, 966, 528, 959, 563, 942, 592, 907, 616, 858, 623, 745, 598, 616, 553, 493, 516, 390, 527, 310, 538, 254, 545, 177, 540, 141, 524, 114, 505, 85, 466, 72, 422, 66, 378, 68, 338, 94, 263, 151, 177, 227, 108, 318, 52, 367, 41, 407, 55, 450, 108, 503, 185, 507, -17, 165, -13, 9, 330, 116, 639, 1195, 669, 1182, -3, 516, -16)
+
+[node name="inside collision" type="CollisionPolygon2D" parent="track_collision" parent_id_path=PackedInt32Array(130510195) index="1" unique_id=622765486]
+polygon = PackedVector2Array(346, 180, 410, 267, 448, 313, 476, 328, 500, 333, 522, 331, 552, 316, 587, 282, 708, 154, 728, 140, 748, 148, 840, 187, 903, 220, 941, 248, 791, 228, 745, 232, 695, 260, 666, 306, 665, 354, 682, 398, 727, 450, 756, 467, 750, 468, 735, 463, 593, 415, 508, 395, 439, 395, 399, 397, 346, 407, 252, 422, 201, 418, 189, 381, 204, 325, 244, 260, 295, 212)
+
+[node name="track path" parent="." index="3" unique_id=1298881647]
+curve = SubResource("Curve2D_wogib")

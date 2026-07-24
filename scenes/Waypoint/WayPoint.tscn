@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://tooydjghqo3h"]
 
-[ext_resource type="Script" uid="uid://chslyv5q34lbf" path="res://scripts/WayPoint.gd" id="1_i4lya"]
+[ext_resource type="Script" uid="uid://chslyv5q34lbf" path="res://scenes/Waypoint/WayPoint.gd" id="1_i4lya"]
 [ext_resource type="FontFile" uid="uid://iquj162s48bs" path="res://assets/font/PressStart2P-Regular.ttf" id="2_e15el"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ucng7"]

@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://tq8lyp5drl0y"]
+
+[ext_resource type="Texture2D" uid="uid://2msta3ane5h5" path="res://assets/levels/Images/WaterBg.png" id="2_3o18r"]
+[ext_resource type="Texture2D" uid="uid://c1m5vk3rejca7" path="res://assets/levels/Images/Monaco.png" id="3_3e8hu"]
+[ext_resource type="PackedScene" uid="uid://bvun3v1h17op6" path="res://scenes/Oil/OilDropper.tscn" id="4_0k5ti"]
+[ext_resource type="PackedScene" uid="uid://drq8exgion2m4" path="res://scenes/Track Processor/TrackProcessor.tscn" id="5_o31tp"]
+[ext_resource type="Texture2D" uid="uid://dec3bup5l0rha" path="res://assets/levels/Images/FinishLine.png" id="6_e4ivq"]
+[ext_resource type="PackedScene" uid="uid://mqtjdmq724f8" path="res://scenes/Verification/VerificationLayer.tscn" id="7_m8xfo"]
+[ext_resource type="PackedScene" uid="uid://dvaolyrr6a1gs" path="res://scenes/Cars/CpuCar.tscn" id="8_6wfar"]
+[ext_resource type="Texture2D" uid="uid://dlry4iqrl31mt" path="res://assets/levels/Images/CarGreen.png" id="9_2cmyv"]
+[ext_resource type="Texture2D" uid="uid://dr8u06xrl4yv6" path="res://assets/levels/Images/CarPurple.png" id="10_8ijwf"]
+[ext_resource type="Texture2D" uid="uid://pndhsqg7v7iu" path="res://assets/levels/Images/CarBlue.png" id="11_ok3cw"]
+[ext_resource type="PackedScene" uid="uid://doox71dhvje0x" path="res://scenes/Cars/PlayerCar.tscn" id="12_by6r5"]
+[ext_resource type="PackedScene" uid="uid://cqs0ea73r6msh" path="res://scenes/Race Controller/RaceController.tscn" id="13_pg6ba"]
+[ext_resource type="PackedScene" uid="uid://c7ikm6i8htbnt" path="res://scenes/Count Down/CountDown.tscn" id="14_v38rh"]
+[ext_resource type="PackedScene" uid="uid://gxmb4rhrqes4" path="res://scenes/GUI/GameUi.tscn" id="15_ggw5r"]
+
+[sub_resource type="Curve2D" id="Curve2D_7fxw1"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 658, 500, -29.483261, 7.090911, 29.483261, -7.090911, 815, 538, 26.578003, 53.659313, -26.578003, -53.659313, 832, 447, -30.555695, 86.376656, 30.555695, -86.376656, 738, 318, -24.83685, 85.9355, 24.83685, -85.9355, 1034, 282, 58.842976, -9.917356, -58.842976, 9.917356, 718, 68, 50.247932, -1.983471, -50.247932, 1.983471, 507, 274, 61.118023, 0.081386566, -61.118023, -0.081386566, 353, 115, -5.950413, -157.35536, 5.950413, 157.35536, 126, 392, -82.32, 10.647271, 82.32, -10.647271, 442, 459, -62.59639, -18.683239, 0, 0, 643, 494, 0, 0, 0, 0, 658, 500)
+}
+point_count = 12
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52pn0"]
+size = Vector2(113.52194, 16)
+
+[node name="BackUp_Track" type="Node" unique_id=647559077]
+
+[node name="bakcground" type="Sprite2D" parent="." unique_id=460417291]
+position = Vector2(591, 319)
+scale = Vector2(1.0625, 1.0625)
+texture = ExtResource("2_3o18r")
+
+[node name="track_img" type="Sprite2D" parent="." unique_id=1767059704]
+position = Vector2(578.00006, 324.00003)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_3e8hu")
+
+[node name="track_collision" type="Area2D" parent="." unique_id=130510195]
+collision_layer = 2
+
+[node name="outside collision" type="CollisionPolygon2D" parent="track_collision" unique_id=870524395]
+polygon = PackedVector2Array(509, 187, 541, 151, 583, 102, 647, 43, 695, 20, 732, 11, 768, 25, 895, 75, 1030, 153, 1075, 211, 1086, 273, 1074, 315, 1030, 358, 982, 369, 914, 372, 865, 367, 800, 350, 830, 371, 850, 386, 939, 452, 961, 489, 966, 528, 959, 563, 942, 592, 907, 616, 858, 623, 745, 598, 616, 553, 493, 516, 390, 527, 310, 538, 254, 545, 177, 540, 141, 524, 114, 505, 85, 466, 72, 422, 66, 378, 68, 338, 94, 263, 151, 177, 227, 108, 318, 52, 367, 41, 407, 55, 450, 108, 503, 185, 507, -17, 165, -13, 9, 330, 116, 639, 1195, 669, 1182, -3, 516, -16)
+
+[node name="inside collision" type="CollisionPolygon2D" parent="track_collision" unique_id=1402515962]
+polygon = PackedVector2Array(346, 180, 410, 267, 448, 313, 476, 328, 500, 333, 522, 331, 552, 316, 587, 282, 708, 154, 728, 140, 748, 148, 840, 187, 903, 220, 941, 248, 791, 228, 745, 232, 695, 260, 666, 306, 665, 354, 682, 398, 727, 450, 756, 467, 750, 468, 735, 463, 593, 415, 508, 395, 439, 395, 399, 397, 346, 407, 252, 422, 201, 418, 189, 381, 204, 325, 244, 260, 295, 212)
+
+[node name="track path" type="Path2D" parent="." unique_id=1298881647]
+curve = SubResource("Curve2D_7fxw1")
+
+[node name="Oil_Dropper" parent="track path" unique_id=570713592 node_paths=PackedStringArray("oil_container") instance=ExtResource("4_0k5ti")]
+position = Vector2(753.55615, 529.39764)
+rotation = 0.25029528
+progress = 100.0
+debug = false
+oil_container = NodePath("../../oil_container")
+
+[node name="Oil_Dropper2" parent="track path" unique_id=991340226 node_paths=PackedStringArray("oil_container") instance=ExtResource("4_0k5ti")]
+position = Vector2(753.55615, 529.39764)
+rotation = 0.25029528
+progress = 100.0
+debug = false
+oil_container = NodePath("../../oil_container")
+
+[node name="TrackProcessor" parent="track path" unique_id=1278362240 instance=ExtResource("5_o31tp")]
+position = Vector2(658, 500)
+rotation = 0.3398851
+
+[node name="oil_container" type="Node" parent="." unique_id=1420500395]
+
+[node name="Start_Line" type="Area2D" parent="." unique_id=2084733351]
+position = Vector2(697, 518)
+rotation = -1.208423
+collision_layer = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Start_Line" unique_id=1806736135]
+position = Vector2(1.9101944, 0)
+scale = Vector2(0.88108313, 1)
+texture = ExtResource("6_e4ivq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Start_Line" unique_id=495660547]
+position = Vector2(1.757019, 0)
+shape = SubResource("RectangleShape2D_52pn0")
+
+[node name="Verification holder" type="Node" parent="." unique_id=585834861]
+
+[node name="Verification" parent="Verification holder" unique_id=1065954631 instance=ExtResource("7_m8xfo")]
+position = Vector2(763, 397.99994)
+rotation = -0.39891955
+
+[node name="Verification2" parent="Verification holder" unique_id=1934791953 instance=ExtResource("7_m8xfo")]
+position = Vector2(563.99994, 222.99998)
+rotation = -2.082533
+
+[node name="Verification3" parent="Verification holder" unique_id=714093725 instance=ExtResource("7_m8xfo")]
+position = Vector2(149, 296)
+rotation = -2.8756201
+
+[node name="Cars holder" type="Node" parent="." unique_id=1837840757]
+
+[node name="Player Car" parent="Cars holder" unique_id=323058446 instance=ExtResource("12_by6r5")]
+position = Vector2(645, 530)
+car_name = "Mcqueen"
+car_number = 1
+
+[node name="CPU Car" parent="Cars holder" unique_id=860932081 instance=ExtResource("8_6wfar")]
+position = Vector2(565.99994, 499)
+rotation = 0.34785226
+debug = true
+car_texture = ExtResource("9_2cmyv")
+car_name = "Franchisco"
+car_number = 2
+
+[node name="CPU Car2" parent="Cars holder" unique_id=1081522855 instance=ExtResource("8_6wfar")]
+position = Vector2(648.99994, 465)
+rotation = 0.3520755
+debug = true
+max_speed_limit = 320.0
+min_speed_limit = 250.0
+car_texture = ExtResource("10_8ijwf")
+car_name = "Will"
+car_number = 3
+
+[node name="CPU Car3" parent="Cars holder" unique_id=439395284 instance=ExtResource("8_6wfar")]
+position = Vector2(586.00006, 445.00003)
+rotation = 0.26118234
+debug = true
+max_speed_limit = 260.0
+min_speed_limit = 200.0
+car_texture = ExtResource("11_ok3cw")
+car_name = "Weathers"
+car_number = 4
+
+[node name="RaceController" parent="." unique_id=1426071283 instance=ExtResource("13_pg6ba")]
+total_laps = 2
+
+[node name="WayPoints holder" type="Node" parent="." unique_id=1157639865]
+
+[node name="UiCanvas" type="CanvasLayer" parent="." unique_id=1376558374]
+
+[node name="Count down" parent="UiCanvas" unique_id=2113504807 instance=ExtResource("14_v38rh")]
+waiting_time = 0.1
+
+[node name="GameUI" parent="UiCanvas" unique_id=2000360718 instance=ExtResource("15_ggw5r")]
+
+[connection signal="area_entered" from="track_collision" to="." method="_on_track_collision_area_entered"]
+[connection signal="area_entered" from="Start_Line" to="." method="_on_start_line_area_entered"]

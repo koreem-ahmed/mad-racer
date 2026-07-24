@@ -3,7 +3,7 @@ extends PathFollow2D
 
 class_name Oil_dropper
 
-const OIL = preload("res://scenes/Oil.tscn")
+const OIL = preload("res://scenes/Oil/Oil.tscn")
 
 
 

@@ -1,4 +1,4 @@
-extends "res://scripts/Car.gd"
+extends "Car.gd"
 
 
 class_name CPU_Car

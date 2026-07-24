@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://doox71dhvje0x"]
 
-[ext_resource type="PackedScene" uid="uid://dndn07wuu1vqd" path="res://scenes/Car.tscn" id="1_2wfw4"]
-[ext_resource type="Script" uid="uid://dtrggyob8ofam" path="res://scripts/Player_Car.gd" id="2_ryxr2"]
+[ext_resource type="PackedScene" uid="uid://dndn07wuu1vqd" path="res://scenes/Cars/Car.tscn" id="1_2wfw4"]
+[ext_resource type="Script" uid="uid://dtrggyob8ofam" path="res://scenes/Cars/Player_Car.gd" id="2_ryxr2"]
 
 [node name="Player Car" unique_id=323058446 instance=ExtResource("1_2wfw4")]
 script = ExtResource("2_ryxr2")

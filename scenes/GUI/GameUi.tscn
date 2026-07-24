@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://gxmb4rhrqes4"]
 
-[ext_resource type="Script" uid="uid://dmhirsw18n2jy" path="res://scripts/GameUi.gd" id="1_28eo3"]
+[ext_resource type="Script" uid="uid://dmhirsw18n2jy" path="res://scenes/GUI/GameUi.gd" id="1_28eo3"]
 [ext_resource type="PackedScene" uid="uid://kyllddmtfqwb" path="res://scenes/GUI/CarUi.tscn" id="2_rw1kg"]
 [ext_resource type="FontFile" uid="uid://iquj162s48bs" path="res://assets/font/PressStart2P-Regular.ttf" id="3_brbsq"]
 

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bvun3v1h17op6"]
 
 [ext_resource type="Texture2D" uid="uid://blv5vu5ryjp8t" path="res://assets/levels/Images/Dot.png" id="1_bm6xh"]
-[ext_resource type="Script" uid="uid://csm6bavel0fer" path="res://scripts/OilDropper.gd" id="1_j2oex"]
+[ext_resource type="Script" uid="uid://csm6bavel0fer" path="res://scenes/Oil/OilDropper.gd" id="1_j2oex"]
 
 [node name="Oil_Dropper" type="PathFollow2D" unique_id=570713592]
 script = ExtResource("1_j2oex")

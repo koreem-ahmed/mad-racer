@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://kyllddmtfqwb"]
 
-[ext_resource type="Script" uid="uid://7sh8qua4tx3b" path="res://scripts/CarUi.gd" id="1_6a4ro"]
+[ext_resource type="Script" uid="uid://7sh8qua4tx3b" path="res://scenes/GUI/CarUi.gd" id="1_6a4ro"]
 [ext_resource type="LabelSettings" uid="uid://dipt4qjr2iwdn" path="res://Resources/Ui_Label_14.tres" id="2_gdir7"]
 
 [node name="CarUi" type="VBoxContainer" unique_id=38253401]
