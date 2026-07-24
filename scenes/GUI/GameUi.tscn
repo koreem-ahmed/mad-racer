@@ -2,6 +2,25 @@
 
 [ext_resource type="Script" uid="uid://dmhirsw18n2jy" path="res://scripts/GameUi.gd" id="1_28eo3"]
 [ext_resource type="PackedScene" uid="uid://kyllddmtfqwb" path="res://scenes/GUI/CarUi.tscn" id="2_rw1kg"]
+[ext_resource type="FontFile" uid="uid://iquj162s48bs" path="res://assets/font/PressStart2P-Regular.ttf" id="3_brbsq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b1owa"]
+content_margin_left = 18.0
+content_margin_top = 18.0
+content_margin_right = 18.0
+content_margin_bottom = 18.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_d2r2w"]
+font = ExtResource("3_brbsq")
+font_size = 24
+outline_size = 11
+outline_color = Color(0.1288298, 0.12882978, 0.12882978, 1)
 
 [node name="GameUi" type="Control" unique_id=1711084736]
 layout_mode = 3
@@ -45,3 +64,23 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 label_alignment = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1455427079]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_b1owa")
+
+[node name="RaceOverLabel" type="Label" parent="PanelContainer" unique_id=254234166]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_d2r2w")

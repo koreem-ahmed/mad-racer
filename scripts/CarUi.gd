@@ -16,8 +16,8 @@ func _ready() -> void:
 	lap_label.horizontal_alignment = label_alignment
 	last_lap_label.horizontal_alignment = label_alignment
 
-func update_values(car: Car, lap_count: int, last_lap_time: float) -> void:
+func update_values(car: Car, lap_count: int, lap_time: float) -> void:
 	name_label.text = "%s (%02d)" % [car.car_name, car.car_number]
 	lap_label.text = "Laps %d" % lap_count
-	last_lap_label.text = "Last: %.2fs" % last_lap_time
+	last_lap_label.text = "Last: %.2fs" % lap_time
 	

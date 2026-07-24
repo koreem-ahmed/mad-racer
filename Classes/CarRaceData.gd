@@ -14,6 +14,12 @@ var best_lap: float = DEFAULT_LAPTIME
 var target_laps: int = 0
 
 
+var _total_time: float:
+	get: return total_time
+
+var _completed_laps: int:
+	get: return completed_laps
+
 var race_completed: bool:
 	get: return completed_laps == target_laps
 
@@ -40,3 +46,25 @@ func set_total_time(_total_time: float) -> void:
 func force_finish(_total_time: float, progress: float) -> void:
 	partial_progress = progress
 	total_time = _total_time
+
+
+func _to_string() -> String:
+	var total_str = "DNF"
+	if race_completed: total_str = "%0.fs" % (total_time/1000)
+	
+	var best_lap_str: String = ""
+	if best_lap != DEFAULT_LAPTIME:
+		best_lap_str = "%.1fs" % best_lap
+	
+	return "%10s %6s %6s %5d" % [
+		car_name, total_str, best_lap_str, completed_laps
+	]
+
+
+
+static func compare(a: CarRaceData, b: CarRaceData) -> bool:
+	if a._completed_laps == b._completed_laps:
+		if a.race_completed:
+			return a._total_time < b._total_time
+		return a.total_progress > b.total_progress 
+	return a._completed_laps > b._completed_laps

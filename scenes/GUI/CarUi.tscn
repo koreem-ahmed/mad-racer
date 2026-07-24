@@ -8,7 +8,6 @@ visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_6a4ro")
-label_alignment = null
 
 [node name="Name Label" type="Label" parent="." unique_id=1289289358]
 layout_mode = 2

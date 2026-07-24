@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cqs0ea73r6msh" path="res://scenes/RaceController.tscn" id="9_4784h"]
 [ext_resource type="Texture2D" uid="uid://dlry4iqrl31mt" path="res://assets/levels/Images/CarGreen.png" id="10_q1gcb"]
 [ext_resource type="Texture2D" uid="uid://dr8u06xrl4yv6" path="res://assets/levels/Images/CarPurple.png" id="10_xosaf"]
+[ext_resource type="PackedScene" uid="uid://doox71dhvje0x" path="res://scenes/PlayerCar.tscn" id="12_182rf"]
 [ext_resource type="Texture2D" uid="uid://pndhsqg7v7iu" path="res://assets/levels/Images/CarBlue.png" id="12_uriw6"]
 [ext_resource type="PackedScene" uid="uid://gxmb4rhrqes4" path="res://scenes/GUI/GameUi.tscn" id="14_182rf"]
 [ext_resource type="PackedScene" uid="uid://c7ikm6i8htbnt" path="res://scenes/CountDown.tscn" id="14_uriw6"]
@@ -114,7 +115,7 @@ debug = true
 max_speed_limit = 320.0
 min_speed_limit = 250.0
 car_texture = ExtResource("10_xosaf")
-car_name = "Will Rusch"
+car_name = "Will"
 car_number = 2
 
 [node name="CPU Car3" parent="Cars holder" unique_id=439395284 instance=ExtResource("9_63hka")]
@@ -124,8 +125,13 @@ debug = true
 max_speed_limit = 260.0
 min_speed_limit = 200.0
 car_texture = ExtResource("12_uriw6")
-car_name = "Cal Weathers"
+car_name = "Weathers"
 car_number = 3
+
+[node name="Player Car" parent="Cars holder" unique_id=323058446 instance=ExtResource("12_182rf")]
+position = Vector2(645, 530)
+car_name = "Mcqueen"
+car_number = 4
 
 [node name="RaceController" parent="." unique_id=1426071283 instance=ExtResource("9_4784h")]
 total_laps = 2
