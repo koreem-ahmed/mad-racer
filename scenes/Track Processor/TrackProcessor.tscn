@@ -2,6 +2,11 @@
 
 [ext_resource type="Script" uid="uid://d11gdbql3mkli" path="res://scenes/Track Processor/TrackProcessor.gd" id="1_k8hbu"]
 
+[sub_resource type="Curve" id="Curve_k8hbu"]
+_data = [Vector2(0, 0), 0.0, 0.4154887, 0, 0, Vector2(0.364532, 0.9284117), 0.47804087, 0.47804087, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
 [node name="TrackProcessor" type="PathFollow2D" unique_id=1278362240]
 loop = false
 script = ExtResource("1_k8hbu")
+radius_curve = SubResource("Curve_k8hbu")

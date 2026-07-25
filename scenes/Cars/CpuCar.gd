@@ -6,8 +6,13 @@ class_name CPUCar
 
 @export var debug: bool = true
 @export var waypoint_distance: float = 20.0
-@export var max_speed_limit: float = 350.0
-@export var min_speed_limit: float = 300.0
+@export var max_top_speed_limit: float = 350.0
+@export var min_top_speed_limit: float = 300.0
+@export var max_bottom_speed_limit: float = 120.0
+@export var min_bottom_speed_limit: float = 80.0
+@export var speed_reaction: float = 2.0
+
+
 
 @onready var target_sprite: Sprite2D = $"Target sprite"
 
@@ -24,7 +29,7 @@ var _next_waypoint: Waypoint
 
 func _ready() -> void:
 	target_sprite.visible = debug
-	target_speed = randf_range(min_speed_limit , max_speed_limit)
+	target_speed = randf_range(min_top_speed_limit , max_top_speed_limit)
 	
 	super()
 
@@ -32,7 +37,15 @@ func _ready() -> void:
 func update_waypoint() -> void:
 	if global_position.distance_to(targeted_waypoint) < waypoint_distance:
 		set_next_waypoint(_next_waypoint.next_waypoint)
-
+		target_speed = lerp(
+			max_bottom_speed_limit,
+			max_top_speed_limit,
+			_next_waypoint.next_waypoint.radius_factor
+		)
+		print(target_speed)
+		
+	
+	
 
 func set_next_waypoint(wp: Waypoint) -> void:
 	_next_waypoint = wp
@@ -51,7 +64,7 @@ func _physics_process(delta: float) -> void:
 	
 	var ta: float = (targeted_waypoint - global_position).angle()
 	rotation = lerp_angle(rotation, ta, steer_reaction * delta)
-	_velocity = lerp(_velocity, target_speed, delta)
+	_velocity = lerp(_velocity, target_speed, speed_reaction * delta)
 	position += transform.x * _velocity * delta
 	
 	update_waypoint()
