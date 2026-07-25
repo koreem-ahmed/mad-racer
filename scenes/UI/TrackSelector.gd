@@ -14,6 +14,7 @@ const LIGHT: Color = Color("#324d74")
 @onready var high_light: ColorRect = $"High light"
 @onready var texture_rect: TextureRect = $MC/TextureRect
 @onready var track_label: Label = $"MC/Track Label"
+@onready var best_lap_label: Label = $"MC/Best Lap Label"
 
 
 
@@ -21,8 +22,14 @@ func _ready() -> void:
 	high_light.color = DARK
 	texture_rect.texture = track_info.preview_image
 	track_label.text = track_info.track_name
-
-
+	
+	var new_best: float = GameManager.get_best_lap(track_info.track_name)
+	if new_best == CarRaceData.DEFAULT_LAPTIME:
+		best_lap_label.text = "No best lap"
+	else:
+		best_lap_label.text = "Best: %.2fs" % new_best
+		
+	
 
 func _on_mouse_entered() -> void:
 	high_light.color = LIGHT

@@ -1,0 +1,31 @@
+extends Resource
+
+
+class_name SaveData
+
+
+const SAVE_PATH: String = "user://best_laps.res"
+
+
+@export var best_laps: Dictionary[String, float]
+
+
+func get_best(track_name: String) -> float:
+	return best_laps.get(track_name, CarRaceData.DEFAULT_LAPTIME)
+	
+
+
+func save_best(track_name: String, lap_time: float) -> void:
+	var prev: float = get_best(track_name)
+	if lap_time < prev:
+		best_laps[track_name] = lap_time
+		ResourceSaver.save(self, SAVE_PATH)
+
+
+static func _load() -> SaveData: 
+	if ResourceLoader.exists(SAVE_PATH):
+		return ResourceLoader.load(SAVE_PATH)
+	var data: SaveData = SaveData.new()
+	ResourceSaver.save(data, SAVE_PATH)
+	return data
+	

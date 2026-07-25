@@ -56,6 +56,9 @@ func emit_on_lap_completion(info: LapCompleteData) -> void:
 		info.lap_time
 	)
 	
+	if car is PlayerCar:
+		GameManager.save_best_lap(info.lap_time)
+	
 	if rd.race_completed:
 		print("race finnished")
 		car.change_state(Car.CarState.RACEOVER)

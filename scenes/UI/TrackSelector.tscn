@@ -40,11 +40,13 @@ theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
 [node name="TextureRect" type="TextureRect" parent="MC" unique_id=585286982]
+process_mode = 3
 layout_mode = 2
 texture = ExtResource("1_cueic")
 expand_mode = 1
 
 [node name="Track Label" type="Label" parent="MC" unique_id=74358119]
+process_mode = 3
 layout_mode = 2
 text = "fdsfsdfas"
 label_settings = ExtResource("2_pbc52")
