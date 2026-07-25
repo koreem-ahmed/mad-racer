@@ -11,7 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://dr8u06xrl4yv6" path="res://assets/levels/Images/CarPurple.png" id="10_xosaf"]
 [ext_resource type="PackedScene" uid="uid://doox71dhvje0x" path="res://scenes/Cars/PlayerCar.tscn" id="12_182rf"]
 [ext_resource type="Texture2D" uid="uid://pndhsqg7v7iu" path="res://assets/levels/Images/CarBlue.png" id="12_uriw6"]
-[ext_resource type="PackedScene" uid="uid://gxmb4rhrqes4" path="res://scenes/GUI/GameUi.tscn" id="14_182rf"]
+[ext_resource type="PackedScene" uid="uid://gxmb4rhrqes4" path="res://scenes/UI/GameUi.tscn" id="14_182rf"]
+[ext_resource type="AudioStream" uid="uid://j5ukorijaeag" path="res://assets/Sounds/8_Bit_Adventure.mp3" id="14_u5gbe"]
 [ext_resource type="PackedScene" uid="uid://c7ikm6i8htbnt" path="res://scenes/Count Down/CountDown.tscn" id="14_uriw6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_52pn0"]
@@ -125,6 +126,12 @@ total_laps = 2
 waiting_time = 0.1
 
 [node name="GameUI" parent="UiCanvas" unique_id=2000360718 instance=ExtResource("14_182rf")]
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=2112462705]
+stream = ExtResource("14_u5gbe")
+volume_db = -12.0
+autoplay = true
+parameters/looping = true
 
 [connection signal="area_entered" from="track_collision" to="." method="_on_track_collision_area_entered"]
 [connection signal="area_entered" from="Start_Line" to="." method="_on_start_line_area_entered"]

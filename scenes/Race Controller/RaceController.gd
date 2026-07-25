@@ -1,11 +1,11 @@
 extends Node
 
 
-class_name Race_Controller
+class_name RaceController
 
 @export var total_laps: int = 5
 
-@onready var race_controller: Race_Controller = $"."
+@onready var race_controller: RaceController = $"."
 @onready var race_over_timer: Timer = $RaceOverTimer
 
 

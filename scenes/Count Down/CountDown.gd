@@ -1,6 +1,6 @@
 extends Control
 
-class_name count_down
+class_name CountDown
 
 
 

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TrackInfo" format=3 uid="uid://c205hikky83h"]
+
+[ext_resource type="Texture2D" uid="uid://y8hkki1xfqn6" path="res://assets/levels/Images/Monza.png" id="1_fnyt1"]
+[ext_resource type="Script" uid="uid://c2ahdptr1kfli" path="res://Classes/TrackInfo.gd" id="1_yw6hu"]
+[ext_resource type="PackedScene" uid="uid://dyqbn168k0x4l" path="res://scenes/Tracks/Monza.tscn" id="3_o0wg6"]
+
+[resource]
+script = ExtResource("1_yw6hu")
+track_name = "Monza"
+track_scene = ExtResource("3_o0wg6")
+preview_image = ExtResource("1_fnyt1")
+metadata/_custom_type_script = "uid://c2ahdptr1kfli"

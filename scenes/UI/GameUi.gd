@@ -1,7 +1,7 @@
 extends Control
 
 
-class_name Game_Ui
+class_name GameUi
 
 
 @onready var margin_container: MarginContainer = $MarginContainer
@@ -9,7 +9,12 @@ class_name Game_Ui
 @onready var panel_container: PanelContainer = $PanelContainer
 
 
-var _car_ui_dict: Dictionary[Car, Car_Ui] = {}
+var _car_ui_dict: Dictionary[Car, CarUi] = {}
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		GameManager.change_to_main()
 
 
 func _enter_tree() -> void:
@@ -35,7 +40,7 @@ func setup(cars: Array[Car]) -> void:
 		if i >= ui_nodes.size():
 			break
 		
-		var ui: Car_Ui = ui_nodes[i]
+		var ui: CarUi = ui_nodes[i]
 		var car: Car = cars[i] 
 		ui.update_values(car, 0, 0.0)
 		ui.show()

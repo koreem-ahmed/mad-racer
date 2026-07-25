@@ -1,7 +1,7 @@
 extends VBoxContainer
 
 
-class_name Car_Ui
+class_name CarUi
 
 
 @export var label_alignment: HorizontalAlignment = HorizontalAlignment.HORIZONTAL_ALIGNMENT_LEFT

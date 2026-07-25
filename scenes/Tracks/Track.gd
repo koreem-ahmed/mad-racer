@@ -7,8 +7,8 @@ class_name Track
 @onready var verification_holder: Node = $"Verification holder"
 @onready var track_processor: TrackProcessor = $"track path/TrackProcessor"
 @onready var way_points_holder: Node = $"WayPoints holder"
-@onready var race_controller: Race_Controller = $RaceController
-@onready var game_ui: Game_Ui = $UiCanvas/GameUI
+@onready var race_controller: RaceController = $RaceController
+@onready var game_ui: GameUi = $UiCanvas/GameUI
 
 var track_curve: Curve2D
 
@@ -30,7 +30,7 @@ func setup() -> void:
 		cars.append(car)
 		if car is Car:
 			car.setup(verification_holder.get_children().size())
-		if car is CPU_Car:
+		if car is CPUCar:
 			car.set_next_waypoint(track_processor.first_waypoint)
 	
 	race_controller.setup(cars, track_curve)

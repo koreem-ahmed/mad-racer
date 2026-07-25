@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://dyqbn168k0x4l"]
+
+[ext_resource type="PackedScene" uid="uid://3qtcfffg8q0c" path="res://scenes/Tracks/Track.tscn" id="1_7xlgv"]
+[ext_resource type="Texture2D" uid="uid://kigupso6340n" path="res://assets/levels/Images/DirtBg.png" id="2_rcxut"]
+[ext_resource type="Texture2D" uid="uid://y8hkki1xfqn6" path="res://assets/levels/Images/Monza.png" id="3_rg62s"]
+
+[sub_resource type="Curve2D" id="Curve2D_7xlgv"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 875, 728, 9.852634, -0.41052645, -9.852634, 0.41052645, 764, 737, 35.7158, 18.063164, -35.7158, -18.063164, 577, 736, 37.15593, -2.7320535, -37.15593, 2.7320535, 436, 632, 50.181816, -20.363636, -50.181816, 20.363636, 305, 748, 45.81818, 52.363632, -45.81818, -52.363632, -1, 662, -5.5999994, 72.799995, 5.5999994, -72.799995, -50, 318, -81.08966, 11.783934, 81.08966, -11.783934, 61, -100, -78.086075, -26.545921, 78.086075, 26.545921, 495, -86, -23.760002, -48.4, 23.760002, 48.4, 337, 222, -36.960003, -50.160004, 36.960003, 50.160004, 463, 260, -33.440002, -36.960003, 33.440002, 36.960003, 440, 395, -75.68001, -55.440002, 75.68001, 55.440002, 1020, 243, 2.909091, -37.81818, -2.909091, 37.81818, 1171.2499, 678.74994, 93.297844, -3.1266794, -93.297844, 3.1266794, 1015, 725, 0, 0, 0, 0, 875, 728)
+}
+point_count = 16
+
+[node name="Monza" unique_id=647559077 instance=ExtResource("1_7xlgv")]
+
+[node name="bakcground" parent="." index="0" unique_id=460417291]
+texture = ExtResource("2_rcxut")
+
+[node name="track_img" parent="." index="1" unique_id=1767059704]
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("3_rg62s")
+
+[node name="inside collision" type="CollisionPolygon2D" parent="track_collision" parent_id_path=PackedInt32Array(130510195) index="0" unique_id=1299023414]
+position = Vector2(109.00001, 61)
+scale = Vector2(0.813, 0.813)
+polygon = PackedVector2Array(197, 54, 422, 54, 312, 223, 306, 250, 312, 278, 323, 295, 331, 303, 341, 310, 368, 319, 409, 330, 405, 367, 408, 389, 420, 411, 442, 427, 467, 435, 505, 427, 900, 325, 982, 574, 597, 591, 508, 499, 490, 491, 478, 488, 462, 488, 448, 491, 438, 495, 426, 503, 417, 513, 346, 585, 168, 542, 158, 459, 151, 374, 150, 320, 153, 280, 163, 214, 182, 118)
+
+[node name="outside collision" type="CollisionPolygon2D" parent="track_collision" parent_id_path=PackedInt32Array(130510195) index="1" unique_id=570688539]
+position = Vector2(108, 61)
+scale = Vector2(0.813, 0.813)
+polygon = PackedVector2Array(297, -77, 540, -77, 556, -75, 573, -70, 585, -62, 598, -46, 608, -20, 607, 4, 599, 22, 586, 41, 477, 212, 511, 223, 527, 233, 539, 249, 548, 279, 933, 181, 947, 179, 961, 181, 975, 187, 987, 195, 997, 205, 1003, 215, 1137, 621, 1139, 635, 1137, 650, 1132, 666, 1121, 683, 1102, 697, 1088, 702, 1064, 704, 1033, 705, 567, 724, 555, 722, 545, 719, 536, 714, 525, 706, 469, 648, 406, 711, 397, 717, 389, 720, 382, 722, 374, 724, 362, 724, 342, 720, 87, 657, 73, 650, 59, 638, 50, 623, 43, 595, 22, 430, 20, 393, 18, 365, 17, 316, 25, 243, 36, 178, 54, 88, 71, 15, 84, -36, 90, -48, 102, -62, 122, -73, 140, -77, 296, -77, 295.20294, -143.91144, -123.00123, -123.00122, -71, 826, 1282, 820, 1199, -166, 416, -128, 298.893, -143.91144)
+
+[node name="track path" parent="." index="3" unique_id=1298881647]
+position = Vector2(207, 107)
+scale = Vector2(0.65, 0.65)
+curve = SubResource("Curve2D_7xlgv")
+
+[node name="Oil_Dropper" parent="track path" index="0" unique_id=570713592]
+position = Vector2(775.30695, 736.2164)
+rotation = 3.0654883
+
+[node name="Oil_Dropper2" parent="track path" index="1" unique_id=991340226]
+position = Vector2(13.488241, -47.666496)
+rotation = -1.1556225
+progress = 1704.6986
+
+[node name="TrackProcessor" parent="track path" index="2" unique_id=1278362240]
+position = Vector2(875, 728)
+rotation = 3.0568755
+
+[node name="Start_Line" parent="." index="5" unique_id=2084733351]
+position = Vector2(750, 587)
+rotation = 1.5069523
+
+[node name="Verification" parent="Verification holder" parent_id_path=PackedInt32Array(585834861) index="0" unique_id=1065954631]
+position = Vector2(908, 351.99997)
+
+[node name="Verification2" parent="Verification holder" parent_id_path=PackedInt32Array(585834861) index="1" unique_id=1934791953]
+position = Vector2(472.00003, 178)
+rotation = -2.7931564
+
+[node name="Verification3" parent="Verification holder" parent_id_path=PackedInt32Array(585834861) index="2" unique_id=714093725]
+position = Vector2(172, 344.00003)
+rotation = -3.2397823
+
+[node name="Player Car" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="0" unique_id=323058446]
+position = Vector2(861.00006, 605.00006)
+rotation = 3.0467296
+
+[node name="CPU Car" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="1" unique_id=860932081]
+position = Vector2(794.99994, 568)
+rotation = 3.036334
+
+[node name="CPU Car2" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="2" unique_id=1081522855]
+position = Vector2(852, 565)
+rotation = 3.0005944
+
+[node name="CPU Car3" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="3" unique_id=439395284]
+position = Vector2(799, 607)
+rotation = 3.109092

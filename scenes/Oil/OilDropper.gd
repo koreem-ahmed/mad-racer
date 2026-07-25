@@ -1,7 +1,7 @@
 extends PathFollow2D
 
 
-class_name Oil_dropper
+class_name OilDropper
 
 const OIL = preload("res://scenes/Oil/Oil.tscn")
 
@@ -16,10 +16,14 @@ const OIL = preload("res://scenes/Oil/Oil.tscn")
 @onready var dot: Sprite2D = $dot
 @onready var dropper_timer: Timer = $dropper_timer
 
+
+func _enter_tree() -> void:
+	EventHub.on_race_start.connect(start_timer)
+
+
 func _ready() -> void:
 	dot.visible = false
 	progress_ratio = randf()
-	start_timer()
 
 
 func _process(delta: float) -> void:

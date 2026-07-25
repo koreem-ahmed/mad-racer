@@ -28,3 +28,8 @@ polygon = PackedVector2Array(346, 180, 410, 267, 448, 313, 476, 328, 500, 333, 5
 
 [node name="track path" parent="." index="3" unique_id=1298881647]
 curve = SubResource("Curve2D_wogib")
+
+[node name="Oil_Dropper2" parent="track path" index="1" unique_id=991340226]
+position = Vector2(567.58936, 225.89494)
+rotation = 2.2774482
+progress = 1396.8038

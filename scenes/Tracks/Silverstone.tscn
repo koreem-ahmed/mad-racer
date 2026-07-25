@@ -33,8 +33,9 @@ position = Vector2(331.46655, 86.30627)
 rotation = 2.9700754
 
 [node name="Oil_Dropper2" parent="track path" index="1" unique_id=991340226]
-position = Vector2(331.46655, 86.30627)
-rotation = 2.9700754
+position = Vector2(467.32474, 330.903)
+rotation = -0.32027614
+progress = 1077.7909
 
 [node name="TrackProcessor" parent="track path" index="2" unique_id=1278362240]
 position = Vector2(431, 77)

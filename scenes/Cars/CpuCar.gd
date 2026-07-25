@@ -1,7 +1,7 @@
 extends "Car.gd"
 
 
-class_name CPU_Car
+class_name CPUCar
 
 
 @export var debug: bool = true

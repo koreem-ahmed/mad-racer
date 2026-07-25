@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://doox71dhvje0x" path="res://scenes/Cars/PlayerCar.tscn" id="12_by6r5"]
 [ext_resource type="PackedScene" uid="uid://cqs0ea73r6msh" path="res://scenes/Race Controller/RaceController.tscn" id="13_pg6ba"]
 [ext_resource type="PackedScene" uid="uid://c7ikm6i8htbnt" path="res://scenes/Count Down/CountDown.tscn" id="14_v38rh"]
-[ext_resource type="PackedScene" uid="uid://gxmb4rhrqes4" path="res://scenes/GUI/GameUi.tscn" id="15_ggw5r"]
+[ext_resource type="PackedScene" uid="uid://gxmb4rhrqes4" path="res://scenes/UI/GameUi.tscn" id="15_ggw5r"]
 
 [sub_resource type="Curve2D" id="Curve2D_7fxw1"]
 _data = {

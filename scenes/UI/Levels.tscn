@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://btgmpgaekk13h"]
+
+[ext_resource type="AudioStream" uid="uid://c58agys6x8rgl" path="res://assets/Sounds/8_Bit_Nostalgia.mp3" id="1_5pljj"]
+[ext_resource type="Script" uid="uid://cyw6qc38dowgv" path="res://scenes/UI/Levels.gd" id="1_nck0a"]
+[ext_resource type="PackedScene" uid="uid://d25gaxd861mxd" path="res://scenes/UI/TrackSelector.tscn" id="2_qidnb"]
+[ext_resource type="Resource" uid="uid://dh6m01lvnnkuq" path="res://Resources/Indy.tres" id="3_ngau3"]
+[ext_resource type="Resource" uid="uid://c205hikky83h" path="res://Resources/Monza.tres" id="4_nck0a"]
+[ext_resource type="Resource" uid="uid://bjg3n18fxwfud" path="res://Resources/Monaco.tres" id="5_1ekmj"]
+[ext_resource type="Resource" uid="uid://sah33hwoucro" path="res://Resources/Silverstone.tres" id="6_u45go"]
+
+[node name="Levels" type="Control" unique_id=925820505]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nck0a")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=342570633]
+stream = ExtResource("1_5pljj")
+volume_db = -12.0
+autoplay = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2065720003]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.039116703, 0.045743465, 0.07468993, 1)
+
+[node name="MC" type="MarginContainer" parent="." unique_id=970242321]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="GridContainer" type="GridContainer" parent="MC" unique_id=674083071]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 2
+
+[node name="Track Selector" parent="MC/GridContainer" unique_id=316931274 instance=ExtResource("2_qidnb")]
+layout_mode = 2
+track_info = ExtResource("3_ngau3")
+
+[node name="Track Selector2" parent="MC/GridContainer" unique_id=1185415434 instance=ExtResource("2_qidnb")]
+layout_mode = 2
+track_info = ExtResource("4_nck0a")
+
+[node name="Track Selector3" parent="MC/GridContainer" unique_id=619981013 instance=ExtResource("2_qidnb")]
+layout_mode = 2
+track_info = ExtResource("5_1ekmj")
+
+[node name="Track Selector4" parent="MC/GridContainer" unique_id=1813146578 instance=ExtResource("2_qidnb")]
+layout_mode = 2
+track_info = ExtResource("6_u45go")

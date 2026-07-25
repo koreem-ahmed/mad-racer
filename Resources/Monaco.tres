@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TrackInfo" format=3 uid="uid://bjg3n18fxwfud"]
+
+[ext_resource type="Script" uid="uid://c2ahdptr1kfli" path="res://Classes/TrackInfo.gd" id="1_3eu0v"]
+[ext_resource type="Texture2D" uid="uid://c1m5vk3rejca7" path="res://assets/levels/Images/Monaco.png" id="1_8ws6p"]
+[ext_resource type="PackedScene" uid="uid://c5nipi7uf6chm" path="res://scenes/Tracks/Monaco.tscn" id="3_k7m34"]
+
+[resource]
+script = ExtResource("1_3eu0v")
+track_name = "Monaco"
+track_scene = ExtResource("3_k7m34")
+preview_image = ExtResource("1_8ws6p")
+metadata/_custom_type_script = "uid://c2ahdptr1kfli"
