@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://c205hikky83h" path="res://Resources/Monza.tres" id="4_nck0a"]
 [ext_resource type="Resource" uid="uid://bjg3n18fxwfud" path="res://Resources/Monaco.tres" id="5_1ekmj"]
 [ext_resource type="Resource" uid="uid://sah33hwoucro" path="res://Resources/Silverstone.tres" id="6_u45go"]
+[ext_resource type="Texture2D" uid="uid://b5wnwvqam0v1" path="res://assets/levels/Images/Lock.png" id="8_1ekmj"]
 
 [node name="Levels" type="Control" unique_id=925820505]
 layout_mode = 3
@@ -64,3 +65,12 @@ track_info = ExtResource("5_1ekmj")
 [node name="Track Selector4" parent="MC/GridContainer" unique_id=1813146578 instance=ExtResource("2_qidnb")]
 layout_mode = 2
 track_info = ExtResource("6_u45go")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1654084183]
+layout_mode = 0
+offset_left = 495.0
+offset_top = -198.0
+offset_right = 623.0
+offset_bottom = -70.0
+scale = Vector2(6, 6)
+texture = ExtResource("8_1ekmj")
