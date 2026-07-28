@@ -25,12 +25,11 @@ collide_with_areas = true
 collide_with_bodies = false
 
 [node name="Label_for_debug" type="Label" parent="." unique_id=815006212]
-visible = false
 offset_left = -17.0
 offset_top = -9.0
 offset_right = 19.0
 offset_bottom = 11.0
-text = "00"
+text = "01"
 label_settings = SubResource("LabelSettings_ucng7")
 horizontal_alignment = 1
 vertical_alignment = 1

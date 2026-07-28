@@ -10,8 +10,9 @@ signal biuld_completed
 const WAYPOINT = preload("res://scenes/Waypoint/WayPoint.tscn")
 
 
-@export var interval: float = 50.0
+@export var interval: float = 55.0
 @export var grid_space: float = 75.0
+@export var max_path_deviation: float = 50.0
 @export var radius_curve: Curve
 
 
@@ -54,6 +55,7 @@ func create_waypoint() -> Waypoint:
 	
 
 
+
 func generate_waypoints(holder: Node) -> void:
 	var path2d: Path2D = get_parent()
 	progress = interval
@@ -65,11 +67,20 @@ func generate_waypoints(holder: Node) -> void:
 	
 	await get_tree().physics_frame
 
+
+func setup_wp_collisions() -> void:
+	for wp in _waypoints:
+		wp.set_collider_data(max_path_deviation)
+
+
+
 func build_waypoin_data(holder: Node) -> void:
 	_waypoints.clear()
 	await generate_waypoints(holder)
 	connect_waypoints()
 	calculate_radius()
+	await get_tree().physics_frame
+	setup_wp_collisions()
 	
 	for wp in _waypoints:
 		print(wp)

@@ -5,6 +5,7 @@ class_name CPUCar
 
 
 @export var debug: bool = true
+@export_range(0,1) var skill: float = 1.0
 @export var waypoint_distance: float = 20.0
 @export var max_top_speed_limit: float = 350.0
 @export var min_top_speed_limit: float = 300.0
@@ -42,14 +43,13 @@ func update_waypoint() -> void:
 			max_top_speed_limit,
 			_next_waypoint.next_waypoint.radius_factor
 		)
-		print(target_speed)
 		
-	
 	
 
 func set_next_waypoint(wp: Waypoint) -> void:
 	_next_waypoint = wp
-	targeted_waypoint = wp.global_position
+	#targeted_waypoint = wp.global_position
+	targeted_waypoint = wp.get_target_adjusted(0.1)
 	target_sprite.global_position = targeted_waypoint
 
 
