@@ -3,12 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://3qtcfffg8q0c" path="res://scenes/Tracks/Track.tscn" id="1_ag4fu"]
 [ext_resource type="Texture2D" uid="uid://2msta3ane5h5" path="res://assets/levels/Images/WaterBg.png" id="2_wogib"]
 [ext_resource type="Texture2D" uid="uid://c1m5vk3rejca7" path="res://assets/levels/Images/Monaco.png" id="3_boyvc"]
-
-[sub_resource type="Curve2D" id="Curve2D_wogib"]
-_data = {
-"points": PackedVector2Array(-40.97702, -15.416351, 40.97702, 15.416351, 658, 500, -8.771397, -1.3514473, 8.771397, 1.3514473, 764, 529, -14.0197525, 19.908049, 14.0197525, -19.908049, 848, 529, 14.852602, 13.226347, -14.852602, -13.226347, 835, 468, -30.555695, 86.376656, 30.555695, -86.376656, 738, 318, -24.83685, 85.9355, 24.83685, -85.9355, 1034, 282, 58.842976, -9.917356, -58.842976, 9.917356, 711, 71, 50.247932, -1.983471, -50.247932, 1.983471, 507, 274, 61.118023, 0.081386566, -61.118023, -0.081386566, 353, 115, -5.950413, -157.35536, 5.950413, 157.35536, 126, 392, -82.32, 10.647271, 82.32, -10.647271, 442, 459, -62.59639, -18.683239, 0, 0, 643, 494, 0, 0, 0, 0, 658, 500)
-}
-point_count = 13
+[ext_resource type="Curve2D" uid="uid://cno4a66jyafss" path="res://scenes/Tracks/monaco curve.tres" id="4_boyvc"]
 
 [node name="Monaco" unique_id=647559077 instance=ExtResource("1_ag4fu")]
 
@@ -27,7 +22,7 @@ polygon = PackedVector2Array(509, 187, 541, 151, 583, 102, 647, 43, 695, 20, 732
 polygon = PackedVector2Array(346, 180, 410, 267, 448, 313, 476, 328, 500, 333, 522, 331, 552, 316, 587, 282, 708, 154, 728, 140, 748, 148, 840, 187, 903, 220, 941, 248, 791, 228, 745, 232, 695, 260, 666, 306, 665, 354, 682, 398, 727, 450, 756, 467, 750, 468, 735, 463, 593, 415, 508, 395, 439, 395, 399, 397, 346, 407, 252, 422, 201, 418, 189, 381, 204, 325, 244, 260, 295, 212)
 
 [node name="track path" parent="." index="3" unique_id=1298881647]
-curve = SubResource("Curve2D_wogib")
+curve = ExtResource("4_boyvc")
 
 [node name="Oil_Dropper" parent="track path" index="0" unique_id=570713592]
 position = Vector2(754.1001, 527.06476)
@@ -40,20 +35,26 @@ progress = 1396.8038
 
 [node name="TrackProcessor" parent="track path" index="2" unique_id=1278362240]
 rotation = 0.35983974
+interval = 50.0
 
 [node name="Start_Line" parent="." index="5" unique_id=2084733351]
 position = Vector2(639.0001, 497)
 
-[node name="CPU Car" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="0" unique_id=860932081]
-position = Vector2(506.00006, 489)
-skill = 0.3
-
-[node name="Player Car" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="1" unique_id=323058446]
+[node name="Player Car" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="0" unique_id=323058446]
 position = Vector2(576, 504)
 rotation = 0.3551546
 
+[node name="CPU Car" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="1" unique_id=860932081]
+position = Vector2(506.00006, 489)
+debug = false
+skill = 0.8
+
 [node name="CPU Car2" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="2" unique_id=1262372244]
 position = Vector2(606, 455)
+debug = false
+skill = 0.5
 
 [node name="CPU Car3" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="3" unique_id=1915119543]
 position = Vector2(532.00006, 436.00003)
+debug = false
+skill = 0.3

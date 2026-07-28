@@ -65,14 +65,17 @@ rotation = 3.1129818
 [node name="CPU Car" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="1" unique_id=860932081]
 position = Vector2(581.00006, 105.000015)
 rotation = 3.1129603
+debug = false
 
-[node name="CPU Car2" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="2" unique_id=1081522855]
+[node name="CPU Car2" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="2" unique_id=1262372244]
 position = Vector2(586.00006, 57)
 rotation = 3.1089852
+debug = false
 
-[node name="CPU Car3" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="3" unique_id=439395284]
+[node name="CPU Car3" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="3" unique_id=1915119543]
 position = Vector2(514, 60)
 rotation = 3.1617649
+debug = false
 
 [node name="GameUI" parent="UiCanvas" parent_id_path=PackedInt32Array(1376558374) index="1" unique_id=2000360718]
 offset_left = 5.0

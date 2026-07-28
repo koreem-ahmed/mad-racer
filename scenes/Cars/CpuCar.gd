@@ -5,7 +5,7 @@ class_name CPUCar
 
 
 const STEER_REACTION_MAX: float = 12.0
-const STEER_REACTION_MIN: float = 10.0
+const STEER_REACTION_MIN: float = 9.0
 
 const DEVI_STEP_MIN: float = 0.02
 const DEVI_STEP_MAX: float = 0.25

@@ -46,6 +46,7 @@ progress = 1704.6986
 [node name="TrackProcessor" parent="track path" index="2" unique_id=1278362240]
 position = Vector2(875, 728)
 rotation = 3.0568755
+max_path_deviation = 50.0
 
 [node name="Start_Line" parent="." index="5" unique_id=2084733351]
 position = Vector2(750, 587)
@@ -62,6 +63,24 @@ rotation = -2.7931564
 position = Vector2(172, 344.00003)
 rotation = -3.2397823
 
-[node name="CPU Car" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="0" unique_id=860932081]
+[node name="Player Car" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="0" unique_id=323058446]
+position = Vector2(796, 602)
+rotation = 3.0173166
+
+[node name="CPU Car" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="1" unique_id=860932081]
 position = Vector2(794.99994, 568)
 rotation = 3.036334
+debug = false
+skill = 0.9
+
+[node name="CPU Car2" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="2" unique_id=1262372244]
+position = Vector2(850.99994, 561)
+rotation = 3.003656
+debug = false
+skill = 0.5
+
+[node name="CPU Car3" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="3" unique_id=1915119543]
+position = Vector2(857.00006, 599)
+rotation = 3.0222447
+debug = false
+skill = 0.25
