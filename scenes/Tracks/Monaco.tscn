@@ -45,4 +45,15 @@ rotation = 0.35983974
 position = Vector2(639.0001, 497)
 
 [node name="CPU Car" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="0" unique_id=860932081]
-skill = 1.0
+position = Vector2(506.00006, 489)
+skill = 0.3
+
+[node name="Player Car" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="1" unique_id=323058446]
+position = Vector2(576, 504)
+rotation = 0.3551546
+
+[node name="CPU Car2" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="2" unique_id=1262372244]
+position = Vector2(606, 455)
+
+[node name="CPU Car3" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="3" unique_id=1915119543]
+position = Vector2(532.00006, 436.00003)

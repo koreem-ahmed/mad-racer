@@ -94,11 +94,10 @@ func get_target_adjusted(weight: float) -> Vector2:
 	if weight > 0.0:
 		var deviation: float = weight * right_coll_dist
 		deviation = clampf(deviation, -_max_path_deviation, _max_path_deviation)
-		return right_coll_dir * deviation * global_position
+		return  global_position + right_coll_dir * deviation
 	else:
 		var deviation: float = weight * left_coll_dist
 		deviation = clampf(deviation, -_max_path_deviation, _max_path_deviation)
-		
 		return global_position - left_coll_dir * deviation
 	
 

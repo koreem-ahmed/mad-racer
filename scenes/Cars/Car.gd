@@ -117,6 +117,7 @@ func kill_slip_tween() -> void:
 		_slip_tween.kill()
 
 func slip_done() -> void:
+	_velocity = 0.0
 	_slip_tween = null
 	change_state(CarState.DRIVING)
 

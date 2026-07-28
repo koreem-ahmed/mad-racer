@@ -9,4 +9,6 @@ point_count = 3
 [node name="TrackProcessor" type="PathFollow2D" unique_id=1278362240]
 loop = false
 script = ExtResource("1_k8hbu")
+interval = 75.0
+max_path_deviation = 75.0
 radius_curve = SubResource("Curve_k8hbu")

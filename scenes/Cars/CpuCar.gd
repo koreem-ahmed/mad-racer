@@ -4,6 +4,18 @@ extends "Car.gd"
 class_name CPUCar
 
 
+const STEER_REACTION_MAX: float = 12.0
+const STEER_REACTION_MIN: float = 10.0
+
+const DEVI_STEP_MIN: float = 0.02
+const DEVI_STEP_MAX: float = 0.25
+
+const DEVI_LIMIT_MIN: float = 0.1
+const DEVI_LIMIT_MAX: float = 1.0
+
+
+
+
 @export var debug: bool = true
 @export_range(0,1) var skill: float = 1.0
 @export var waypoint_distance: float = 20.0
@@ -25,22 +37,41 @@ var targeted_waypoint: Vector2 = Vector2.ZERO
 var steer_reaction: float = Steer_reaction_max
 var target_speed: float = 250.0
 var _next_waypoint: Waypoint
-
+var deviation_step: float = 0.0
+var deviation_limit: float = 0.0
+var deviation_weight: float =  0.0
+var inverted_skill: float = 1.0
+var allowed_max_speed: float = 0.0
+var allowed_min_speed: float = 0.0
 
 
 func _ready() -> void:
-	target_sprite.visible = debug
-	target_speed = randf_range(min_top_speed_limit , max_top_speed_limit)
-	
 	super()
+	target_sprite.visible = debug
+	inverted_skill = 1.0 - skill
+	target_speed = randf_range(min_top_speed_limit , max_top_speed_limit)
+	deviation_step = lerp(DEVI_STEP_MIN, DEVI_STEP_MAX, inverted_skill)
+	deviation_limit = lerp(DEVI_LIMIT_MIN, DEVI_LIMIT_MAX, inverted_skill)
+	deviation_weight = randf_range(-deviation_limit, deviation_limit)
+	steer_reaction = lerp(STEER_REACTION_MIN, STEER_REACTION_MAX, skill)
+	update_speeds()
+	
+
+func update_speeds() -> void:
+	allowed_max_speed = randf_range(min_top_speed_limit, max_top_speed_limit)
+	allowed_min_speed = randf_range(min_bottom_speed_limit, max_bottom_speed_limit)
+	
+	
+
+
 
 
 func update_waypoint() -> void:
 	if global_position.distance_to(targeted_waypoint) < waypoint_distance:
 		set_next_waypoint(_next_waypoint.next_waypoint)
 		target_speed = lerp(
-			max_bottom_speed_limit,
-			max_top_speed_limit,
+			allowed_min_speed,
+			allowed_max_speed,
 			_next_waypoint.next_waypoint.radius_factor
 		)
 		
@@ -48,8 +79,17 @@ func update_waypoint() -> void:
 
 func set_next_waypoint(wp: Waypoint) -> void:
 	_next_waypoint = wp
-	#targeted_waypoint = wp.global_position
-	targeted_waypoint = wp.get_target_adjusted(0.1)
+	
+	deviation_weight += randf_range(-deviation_step, deviation_step)
+	deviation_weight = clampf(deviation_weight, -deviation_limit, deviation_limit)
+	
+	print("%d %.2f" % [
+		car_number, deviation_weight
+		])
+	
+	
+	
+	targeted_waypoint = wp.get_target_adjusted(deviation_weight)
 	target_sprite.global_position = targeted_waypoint
 
 
@@ -68,3 +108,12 @@ func _physics_process(delta: float) -> void:
 	position += transform.x * _velocity * delta
 	
 	update_waypoint()
+
+
+func _on_deviation_timer_timeout() -> void:
+	update_speeds()
+	if randf() < inverted_skill:
+		deviation_weight = -deviation_weight
+		print("Dev. Adj. --> %d %.2f" % [
+		car_number, deviation_weight
+		])

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://7sh8qua4tx3b" path="res://scenes/UI/CarUi.gd" id="1_6a4ro"]
 [ext_resource type="LabelSettings" uid="uid://dipt4qjr2iwdn" path="res://Resources/Ui_Label_14.tres" id="2_gdir7"]
+[ext_resource type="Texture2D" uid="uid://dr8u06xrl4yv6" path="res://assets/levels/Images/CarPurple.png" id="3_8g2nu"]
 
 [node name="CarUi" type="VBoxContainer" unique_id=38253401]
 visible = false
@@ -9,11 +10,22 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_6a4ro")
 
-[node name="Name Label" type="Label" parent="." unique_id=1289289358]
+[node name="HB" type="HBoxContainer" parent="." unique_id=1120671235]
 layout_mode = 2
-text = "afkdlasf;jk"
+theme_override_constants/separation = 8
+
+[node name="Name Label" type="Label" parent="HB" unique_id=1289289358]
+layout_mode = 2
+text = "no car"
 label_settings = ExtResource("2_gdir7")
 vertical_alignment = 1
+
+[node name="CarTexture" type="TextureRect" parent="HB" unique_id=1916266386]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("3_8g2nu")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="Lap Label" type="Label" parent="." unique_id=2032419380]
 layout_mode = 2

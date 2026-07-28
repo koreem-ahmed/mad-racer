@@ -62,18 +62,6 @@ rotation = -2.7931564
 position = Vector2(172, 344.00003)
 rotation = -3.2397823
 
-[node name="Player Car" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="0" unique_id=323058446]
-position = Vector2(861.00006, 605.00006)
-rotation = 3.0467296
-
-[node name="CPU Car" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="1" unique_id=860932081]
+[node name="CPU Car" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="0" unique_id=860932081]
 position = Vector2(794.99994, 568)
 rotation = 3.036334
-
-[node name="CPU Car2" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="2" unique_id=1081522855]
-position = Vector2(852, 565)
-rotation = 3.0005944
-
-[node name="CPU Car3" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="3" unique_id=439395284]
-position = Vector2(799, 607)
-rotation = 3.109092
