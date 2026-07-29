@@ -43,7 +43,6 @@ progress = 235.72534
 [node name="TrackProcessor" parent="track path" index="2" unique_id=1278362240]
 position = Vector2(327, 114)
 rotation = 2.910168
-max_path_deviation = 45.0
 
 [node name="Start_Line" parent="." index="5" unique_id=2084733351]
 position = Vector2(329.00003, 117)
@@ -69,22 +68,16 @@ rotation = 3.1093395
 position = Vector2(388, 132.99998)
 rotation = 2.898412
 skill = 0.3
-max_top_speed_limit = 300.0
-min_top_speed_limit = 280.0
 
 [node name="CPU Car2" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="2" unique_id=1262372244]
 position = Vector2(444.99997, 78.999985)
 rotation = 3.0591173
 skill = 0.2
-max_top_speed_limit = 270.0
-min_top_speed_limit = 250.0
 
 [node name="CPU Car3" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="3" unique_id=1915119543]
 position = Vector2(383, 90)
 rotation = 2.8774374
-skill = 0.3
-max_top_speed_limit = 280.0
-min_top_speed_limit = 240.0
+skill = 0.4
 
 [node name="GameUI" parent="UiCanvas" parent_id_path=PackedInt32Array(1376558374) index="1" unique_id=2000360718]
 offset_left = -5.0

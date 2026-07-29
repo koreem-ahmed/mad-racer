@@ -66,11 +66,29 @@ track_info = ExtResource("5_1ekmj")
 layout_mode = 2
 track_info = ExtResource("6_u45go")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1654084183]
+[node name="lock level 2" type="TextureRect" parent="." unique_id=1654084183]
 layout_mode = 0
-offset_left = 495.0
-offset_top = -198.0
-offset_right = 623.0
-offset_bottom = -70.0
-scale = Vector2(6, 6)
+offset_left = 576.0
+offset_top = -57.0
+offset_right = 704.0
+offset_bottom = 71.0
+scale = Vector2(4.5, 3)
+texture = ExtResource("8_1ekmj")
+
+[node name="lock level 3" type="TextureRect" parent="." unique_id=1360712485]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 263.0
+offset_right = 135.0
+offset_bottom = 391.0
+scale = Vector2(4.5, 3)
+texture = ExtResource("8_1ekmj")
+
+[node name="lock level 4" type="TextureRect" parent="." unique_id=890355029]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 260.0
+offset_right = 704.0
+offset_bottom = 388.0
+scale = Vector2(4.5, 3)
 texture = ExtResource("8_1ekmj")
