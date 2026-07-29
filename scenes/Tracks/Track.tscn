@@ -12,8 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://dlry4iqrl31mt" path="res://assets/levels/Images/CarGreen.png" id="10_q1gcb"]
 [ext_resource type="Texture2D" uid="uid://pndhsqg7v7iu" path="res://assets/levels/Images/CarBlue.png" id="10_u5gbe"]
 [ext_resource type="PackedScene" uid="uid://gxmb4rhrqes4" path="res://scenes/UI/GameUi.tscn" id="14_182rf"]
+[ext_resource type="LabelSettings" uid="uid://dxbpu33njf08h" path="res://Resources/Ui_Label_32.tres" id="14_4784h"]
 [ext_resource type="AudioStream" uid="uid://j5ukorijaeag" path="res://assets/Sounds/8_Bit_Adventure.mp3" id="14_u5gbe"]
 [ext_resource type="PackedScene" uid="uid://c7ikm6i8htbnt" path="res://scenes/Count Down/CountDown.tscn" id="14_uriw6"]
+[ext_resource type="LabelSettings" uid="uid://ph3kjfjlg3fp" path="res://Resources/Ui_Label_22.tres" id="15_u5gbe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_52pn0"]
 size = Vector2(113.52194, 16)
@@ -84,7 +86,6 @@ rotation = -2.8756201
 
 [node name="Player Car" parent="Cars holder" unique_id=323058446 instance=ExtResource("8_uriw6")]
 position = Vector2(645, 530)
-car_name = "Mcqueen"
 car_number = 1
 
 [node name="CPU Car" parent="Cars holder" unique_id=860932081 instance=ExtResource("9_63hka")]
@@ -123,9 +124,33 @@ waiting_time = 0.1
 
 [node name="GameUI" parent="UiCanvas" unique_id=2000360718 instance=ExtResource("14_182rf")]
 
+[node name="Label" type="Label" parent="UiCanvas" unique_id=1663740443]
+offset_left = 307.0
+offset_top = 194.0
+offset_right = 851.0
+offset_bottom = 226.0
+text = "You won this race"
+label_settings = ExtResource("14_4784h")
+
+[node name="Label2" type="Label" parent="UiCanvas" unique_id=1189896372]
+offset_left = 304.0
+offset_top = 434.0
+offset_right = 854.0
+offset_bottom = 456.0
+text = "The next race have opened"
+label_settings = ExtResource("15_u5gbe")
+
+[node name="Label3" type="Label" parent="UiCanvas" unique_id=1865622890]
+offset_left = 477.0
+offset_top = 467.0
+offset_right = 675.0
+offset_bottom = 489.0
+text = "Click esc"
+label_settings = ExtResource("15_u5gbe")
+
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=2112462705]
 stream = ExtResource("14_u5gbe")
-volume_db = -80.0
+volume_db = -12.0
 autoplay = true
 parameters/looping = true
 

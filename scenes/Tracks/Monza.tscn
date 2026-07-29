@@ -20,9 +20,9 @@ scale = Vector2(0.65, 0.65)
 texture = ExtResource("3_rg62s")
 
 [node name="inside collision" type="CollisionPolygon2D" parent="track_collision" parent_id_path=PackedInt32Array(130510195) index="0" unique_id=1299023414]
-position = Vector2(109.00001, 61)
+position = Vector2(108.00001, 60)
 scale = Vector2(0.813, 0.813)
-polygon = PackedVector2Array(197, 54, 422, 54, 312, 223, 306, 250, 312, 278, 323, 295, 331, 303, 341, 310, 368, 319, 409, 330, 405, 367, 408, 389, 420, 411, 442, 427, 467, 435, 505, 427, 900, 325, 982, 574, 597, 591, 508, 499, 490, 491, 478, 488, 462, 488, 448, 491, 438, 495, 426, 503, 417, 513, 346, 585, 168, 542, 158, 459, 151, 374, 150, 320, 153, 280, 163, 214, 182, 118)
+polygon = PackedVector2Array(190.65189, 45.51046, 422, 54, 312, 223, 306, 250, 312, 278, 323, 295, 331, 303, 341, 310, 368, 319, 409, 330, 405, 367, 408, 389, 420, 411, 442, 427, 467, 435, 505, 427, 900, 325, 982, 574, 597, 591, 508, 499, 490, 491, 478, 488, 462, 488, 448, 491, 438, 495, 426, 503, 417, 513, 346, 585, 163.59161, 547.35547, 143.91144, 353.01355, 145.14145, 295.20294, 153.75153, 214.02214, 175.89175, 105.78107)
 
 [node name="outside collision" type="CollisionPolygon2D" parent="track_collision" parent_id_path=PackedInt32Array(130510195) index="1" unique_id=570688539]
 position = Vector2(108, 61)
@@ -72,15 +72,27 @@ position = Vector2(794.99994, 568)
 rotation = 3.036334
 debug = false
 skill = 0.9
+max_top_speed_limit = 300.0
+min_top_speed_limit = 200.0
 
 [node name="CPU Car2" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="2" unique_id=1262372244]
 position = Vector2(850.99994, 561)
 rotation = 3.003656
 debug = false
 skill = 0.5
+max_top_speed_limit = 280.0
+min_top_speed_limit = 270.0
 
 [node name="CPU Car3" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="3" unique_id=1915119543]
 position = Vector2(857.00006, 599)
 rotation = 3.0222447
 debug = false
 skill = 0.25
+max_top_speed_limit = 200.0
+min_top_speed_limit = 190.0
+
+[node name="RaceController" parent="." index="8" unique_id=1426071283]
+current_track = "Monza"
+
+[node name="Music" parent="." index="11" unique_id=2112462705]
+volume_db = -12.0

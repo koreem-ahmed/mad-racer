@@ -82,12 +82,7 @@ func set_next_waypoint(wp: Waypoint) -> void:
 	
 	deviation_weight += randf_range(-deviation_step, deviation_step)
 	deviation_weight = clampf(deviation_weight, -deviation_limit, deviation_limit)
-	
-	print("%d %.2f" % [
-		car_number, deviation_weight
-		])
-	
-	
+
 	
 	targeted_waypoint = wp.get_target_adjusted(deviation_weight)
 	target_sprite.global_position = targeted_waypoint
@@ -114,6 +109,3 @@ func _on_deviation_timer_timeout() -> void:
 	update_speeds()
 	if randf() < inverted_skill:
 		deviation_weight = -deviation_weight
-		print("Dev. Adj. --> %d %.2f" % [
-		car_number, deviation_weight
-		])

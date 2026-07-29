@@ -6,7 +6,7 @@ class_name Car
 
 enum CarState {WAITING, DRIVING, BOUNCING, SLIPPING, RACEOVER }
 
-@export var car_texture: Texture2D = preload("res://assets/levels/Images/CarRed.png")
+@export var car_texture: Texture2D = preload(GlobalVars.pla)
 @export var car_name: String = "Light Mcqueen"
 @export var car_number: int = 0
 @export var bounce_time: float = 0.8

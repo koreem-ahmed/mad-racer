@@ -10,7 +10,7 @@ class_name GameUi
 
 
 var _car_ui_dict: Dictionary[Car, CarUi] = {}
-
+var player_time: float = 0
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
@@ -50,5 +50,3 @@ func setup(cars: Array[Car]) -> void:
 func on_lap_update(car: Car, lap_count: int, lap_time: float) -> void:
 	if car in _car_ui_dict:
 		_car_ui_dict[car].update_values(car, lap_count, lap_time)
-	
-	

@@ -15,35 +15,11 @@
 [ext_resource type="AudioStream" uid="uid://j5ukorijaeag" path="res://assets/Sounds/8_Bit_Adventure.mp3" id="13_4v2cq"]
 [ext_resource type="LabelSettings" uid="uid://dxbpu33njf08h" path="res://Resources/Ui_Label_32.tres" id="15_av0jf"]
 [ext_resource type="PackedScene" uid="uid://c7ikm6i8htbnt" path="res://scenes/Count Down/CountDown.tscn" id="15_kuv8g"]
+[ext_resource type="Theme" uid="uid://mn3tc8u4lnhh" path="res://Resources/Buttons.tres" id="16_kuv8g"]
 [ext_resource type="PackedScene" uid="uid://gxmb4rhrqes4" path="res://scenes/UI/GameUi.tscn" id="16_s1u1q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c1mgp"]
 size = Vector2(113.52194, 16)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_av0jf"]
-bg_color = Color(0.68235296, 0.5058824, 0.13725491, 1)
-border_width_bottom = 10
-border_color = Color(0.1749846, 0.17498463, 0.1749846, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kuv8g"]
-bg_color = Color(0.68235296, 0.5058824, 0.22745098, 1)
-border_width_top = 10
-border_color = Color(0.8, 0.8, 0.8, 0)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-
-[sub_resource type="Theme" id="Theme_kuv8g"]
-Button/font_sizes/font_size = 32
-Button/styles/focus = SubResource("StyleBoxFlat_av0jf")
-Button/styles/hover = SubResource("StyleBoxFlat_av0jf")
-Button/styles/normal = SubResource("StyleBoxFlat_av0jf")
-Button/styles/pressed = SubResource("StyleBoxFlat_kuv8g")
 
 [node name="Main menu" type="Control" unique_id=162526997]
 layout_mode = 3
@@ -183,7 +159,7 @@ offset_left = 459.0
 offset_top = 313.0
 offset_right = 606.0
 offset_bottom = 377.0
-theme = SubResource("Theme_kuv8g")
+theme = ExtResource("16_kuv8g")
 text = "Play"
 
 [node name="Quit" type="Button" parent="UiCanvas" unique_id=81755936]
@@ -191,7 +167,7 @@ offset_left = 459.0
 offset_top = 399.0
 offset_right = 606.0
 offset_bottom = 463.0
-theme = SubResource("Theme_kuv8g")
+theme = ExtResource("16_kuv8g")
 text = "Quit"
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=281671684]

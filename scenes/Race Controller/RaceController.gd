@@ -4,6 +4,7 @@ extends Node
 class_name RaceController
 
 @export var total_laps: int = 5
+@export var current_track: String
 
 @onready var race_controller: RaceController = $"."
 @onready var race_over_timer: Timer = $RaceOverTimer
@@ -15,6 +16,8 @@ var _race_data: Dictionary[Car, CarRaceData] = {}
 var started: bool = false
 var finished: bool = false
 var start_time: float
+var winner_time: float = 10000000000
+var winner_car: String
 
 
 func setup(_cars: Array[Car], _track_curve: Curve2D):
@@ -79,10 +82,33 @@ func finish_race() -> void:
 			var progress: float = offset / total_len 
 			rd.force_finish(elapesed, progress)
 			c.change_state(Car.CarState.RACEOVER)
+		
+		if rd.total_time != 0 && rd.total_time < winner_time:
+			winner_time = rd.total_time
+			winner_car = rd.car_name
+		
+		
 	var results: Array[CarRaceData] = _race_data.values()
 	results.sort_custom(CarRaceData.compare)
 	EventHub.emit_on_race_over(results)
 	
+	print(winner_car,": ", winner_time)
+	if winner_car == "Mcqueen":
+		match current_track:
+			"Indy":
+				GlobalVars.wins = 1
+				print("added")
+			"Monza":
+				GlobalVars.wins = 2
+				print("added")
+			"Monaco":
+				GlobalVars.wins = 3
+				print("added")
+			"Silverstone":
+				GlobalVars.wins = 4
+				print("added")
+
+
 
 func _on_race_over_timer_timeout() -> void:
 	finish_race()

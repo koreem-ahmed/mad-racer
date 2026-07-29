@@ -86,6 +86,9 @@ skill = 0.3
 max_top_speed_limit = 280.0
 min_top_speed_limit = 240.0
 
+[node name="RaceController" parent="." index="8" unique_id=1426071283]
+current_track = "Indy"
+
 [node name="GameUI" parent="UiCanvas" parent_id_path=PackedInt32Array(1376558374) index="1" unique_id=2000360718]
 offset_left = -5.0
 offset_top = 2.0

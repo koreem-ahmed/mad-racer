@@ -58,3 +58,6 @@ skill = 0.5
 position = Vector2(532.00006, 436.00003)
 debug = false
 skill = 0.3
+
+[node name="RaceController" parent="." index="8" unique_id=1426071283]
+current_track = "Monaco"

@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.6", "GL Compatibility")
 
 EventHub="*uid://cw3ghj7djr2i3"
 GameManager="*uid://cpb24pbqf47iq"
+GlobalVars="*uid://digptyaa1crm8"
 
 [display]
 

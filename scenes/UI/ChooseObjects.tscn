@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://cje02v4wxtygc"]
+
+[ext_resource type="LabelSettings" uid="uid://dxbpu33njf08h" path="res://Resources/Ui_Label_32.tres" id="1_g6j5g"]
+[ext_resource type="Script" uid="uid://4gmchegclft0" path="res://scenes/UI/ChooseObjects.gd" id="1_h5t8x"]
+[ext_resource type="Texture2D" uid="uid://pndhsqg7v7iu" path="res://assets/levels/Images/CarBlue.png" id="3_3pc20"]
+[ext_resource type="Texture2D" uid="uid://dlry4iqrl31mt" path="res://assets/levels/Images/CarGreen.png" id="4_7u2l6"]
+[ext_resource type="Texture2D" uid="uid://dr8u06xrl4yv6" path="res://assets/levels/Images/CarPurple.png" id="5_dql22"]
+[ext_resource type="Texture2D" uid="uid://b7wmt1hcagsow" path="res://assets/levels/Images/CarRed.png" id="6_ud4xt"]
+[ext_resource type="Theme" uid="uid://mn3tc8u4lnhh" path="res://Resources/Buttons.tres" id="7_gosgp"]
+
+[node name="Choose objects" type="Control" unique_id=1322320051]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h5t8x")
+
+[node name="enter_name" type="Label" parent="." unique_id=1682502773]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 93.0
+offset_bottom = 160.0
+grow_horizontal = 2
+text = "Enter you Racer name
+then press enter"
+label_settings = ExtResource("1_g6j5g")
+horizontal_alignment = 1
+
+[node name="input" type="LineEdit" parent="." unique_id=1935650695]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.37800002
+anchor_top = 0.289
+anchor_right = 0.60200006
+anchor_bottom = 0.36600003
+offset_left = -0.45602417
+offset_top = -0.27200317
+offset_right = 0.49591064
+offset_bottom = -0.16801453
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=443707115]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 302.0
+offset_right = 1012.0
+offset_bottom = 465.0
+theme_override_constants/separation = 120
+
+[node name="BlueCar" type="TextureRect" parent="HBoxContainer" unique_id=323513232]
+layout_mode = 2
+texture = ExtResource("3_3pc20")
+stretch_mode = 4
+
+[node name="GreenCar" type="TextureRect" parent="HBoxContainer" unique_id=1810023780]
+layout_mode = 2
+texture = ExtResource("4_7u2l6")
+stretch_mode = 4
+
+[node name="PinkCar" type="TextureRect" parent="HBoxContainer" unique_id=1514362791]
+layout_mode = 2
+texture = ExtResource("5_dql22")
+stretch_mode = 4
+
+[node name="RedCar" type="TextureRect" parent="HBoxContainer" unique_id=472179993]
+layout_mode = 2
+texture = ExtResource("6_ud4xt")
+stretch_mode = 4
+
+[node name="Next_button" type="Button" parent="." unique_id=1274420826]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.84000003
+anchor_top = 0.86100006
+anchor_right = 0.98
+anchor_bottom = 0.952
+offset_left = 0.3199463
+offset_top = 0.07196045
+offset_right = 0.040039063
+offset_bottom = 0.104003906
+theme = ExtResource("7_gosgp")
+theme_override_font_sizes/font_size = 37
+text = "Next"
+
+[node name="pointer" type="Label" parent="." unique_id=140711077]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.16100001
+anchor_top = 0.735
+anchor_right = 0.18800001
+anchor_bottom = 0.77900004
+offset_left = -0.47201538
+offset_top = -0.27999878
+offset_right = 0.42399597
+offset_bottom = 3.2079773
+text = "^"
+label_settings = ExtResource("1_g6j5g")
+
+[connection signal="pressed" from="Next_button" to="." method="_on_next_button_pressed"]
