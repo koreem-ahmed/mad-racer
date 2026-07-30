@@ -16,9 +16,8 @@ class_name Track
 var track_curve: Curve2D
 
 func _ready() -> void:
+	cars_texture()
 	await setup()
-
-
 
 func setup() -> void:
 	var cars: Array[Car] = []
@@ -36,12 +35,10 @@ func setup() -> void:
 		if car is CPUCar:
 			car.set_next_waypoint(track_processor.first_waypoint)
 	
-	cars_texture()
 	
 	race_controller.setup(cars, track_curve)
 	
 	game_ui.setup(cars)
-	
 
 
 func cars_texture() -> void:

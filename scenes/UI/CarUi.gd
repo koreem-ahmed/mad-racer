@@ -18,6 +18,8 @@ func _ready() -> void:
 	lap_label.horizontal_alignment = label_alignment
 	last_lap_label.horizontal_alignment = label_alignment
 	
+
+func _process(delta: float) -> void:
 	car_texture.texture = cpu_car_texture
 
 func update_values(car: Car, lap_count: int, lap_time: float) -> void:
