@@ -53,4 +53,6 @@ func _player_name(name: String) -> void:
 	print(player_name)
 
 func _on_next_button_pressed() -> void:
-	Car.car_name
+	GlobalVars.player_name = player_name
+	GlobalVars.player_car_texture = pointer_placement
+	get_tree().change_scene_to_file("res://scenes/UI/Levels.tscn")

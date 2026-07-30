@@ -24,7 +24,7 @@ const DEVI_LIMIT_MAX: float = 1.0
 @export var max_bottom_speed_limit: float = 120.0
 @export var min_bottom_speed_limit: float = 80.0
 @export var speed_reaction: float = 2.0
-
+@export var Cpu_texture: Texture2D
 
 
 @onready var target_sprite: Sprite2D = $"Target sprite"
@@ -55,7 +55,7 @@ func _ready() -> void:
 	deviation_weight = randf_range(-deviation_limit, deviation_limit)
 	steer_reaction = lerp(STEER_REACTION_MIN, STEER_REACTION_MAX, skill)
 	update_speeds()
-	
+	car_sprite.texture = Cpu_texture
 
 func update_speeds() -> void:
 	allowed_max_speed = randf_range(min_top_speed_limit, max_top_speed_limit)
@@ -90,6 +90,8 @@ func set_next_waypoint(wp: Waypoint) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	car_sprite.texture = Cpu_texture
+	
 	if !_next_waypoint:
 		return
 	if _state == CarState.SLIPPING:

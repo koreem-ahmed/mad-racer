@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dr8u06xrl4yv6" path="res://assets/levels/Images/CarPurple.png" id="9_182rf"]
 [ext_resource type="PackedScene" uid="uid://cqs0ea73r6msh" path="res://scenes/Race Controller/RaceController.tscn" id="9_4784h"]
 [ext_resource type="Texture2D" uid="uid://dlry4iqrl31mt" path="res://assets/levels/Images/CarGreen.png" id="10_q1gcb"]
-[ext_resource type="Texture2D" uid="uid://pndhsqg7v7iu" path="res://assets/levels/Images/CarBlue.png" id="10_u5gbe"]
+[ext_resource type="Texture2D" uid="uid://b7wmt1hcagsow" path="res://assets/levels/Images/CarRed.png" id="10_u5gbe"]
 [ext_resource type="PackedScene" uid="uid://gxmb4rhrqes4" path="res://scenes/UI/GameUi.tscn" id="14_182rf"]
 [ext_resource type="LabelSettings" uid="uid://dxbpu33njf08h" path="res://Resources/Ui_Label_32.tres" id="14_4784h"]
 [ext_resource type="AudioStream" uid="uid://j5ukorijaeag" path="res://assets/Sounds/8_Bit_Adventure.mp3" id="14_u5gbe"]
@@ -86,13 +86,14 @@ rotation = -2.8756201
 
 [node name="Player Car" parent="Cars holder" unique_id=323058446 instance=ExtResource("8_uriw6")]
 position = Vector2(645, 530)
+player_texture = null
 car_number = 1
 
 [node name="CPU Car" parent="Cars holder" unique_id=860932081 instance=ExtResource("9_63hka")]
 position = Vector2(565.99994, 499)
 rotation = 0.34785226
 debug = true
-car_texture = ExtResource("10_q1gcb")
+Cpu_texture = ExtResource("9_182rf")
 car_name = "Franchisco"
 car_number = 2
 
@@ -100,7 +101,7 @@ car_number = 2
 position = Vector2(648.99994, 465)
 rotation = 0.3520755
 debug = true
-car_texture = ExtResource("9_182rf")
+Cpu_texture = ExtResource("10_q1gcb")
 car_name = "Will"
 car_number = 3
 
@@ -108,7 +109,7 @@ car_number = 3
 position = Vector2(586.00006, 445.00003)
 rotation = 0.26118234
 debug = true
-car_texture = ExtResource("10_u5gbe")
+Cpu_texture = ExtResource("10_u5gbe")
 car_name = "Weathers"
 car_number = 4
 
@@ -124,7 +125,8 @@ waiting_time = 0.1
 
 [node name="GameUI" parent="UiCanvas" unique_id=2000360718 instance=ExtResource("14_182rf")]
 
-[node name="Label" type="Label" parent="UiCanvas" unique_id=1663740443]
+[node name="winning_label" type="Label" parent="UiCanvas" unique_id=1663740443]
+visible = false
 offset_left = 307.0
 offset_top = 194.0
 offset_right = 851.0
@@ -132,7 +134,8 @@ offset_bottom = 226.0
 text = "You won this race"
 label_settings = ExtResource("14_4784h")
 
-[node name="Label2" type="Label" parent="UiCanvas" unique_id=1189896372]
+[node name="winning_label2" type="Label" parent="UiCanvas" unique_id=1189896372]
+visible = false
 offset_left = 304.0
 offset_top = 434.0
 offset_right = 854.0
@@ -140,7 +143,8 @@ offset_bottom = 456.0
 text = "The next race have opened"
 label_settings = ExtResource("15_u5gbe")
 
-[node name="Label3" type="Label" parent="UiCanvas" unique_id=1865622890]
+[node name="winning_label3" type="Label" parent="UiCanvas" unique_id=1865622890]
+visible = false
 offset_left = 477.0
 offset_top = 467.0
 offset_right = 675.0

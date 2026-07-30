@@ -9,6 +9,9 @@ class_name Track
 @onready var way_points_holder: Node = $"WayPoints holder"
 @onready var race_controller: RaceController = $RaceController
 @onready var game_ui: GameUi = $UiCanvas/GameUI
+@onready var cpu_car: CPUCar = $"Cars holder/CPU Car"
+@onready var cpu_car_2: CPUCar = $"Cars holder/CPU Car2"
+@onready var cpu_car_3: CPUCar = $"Cars holder/CPU Car3"
 
 var track_curve: Curve2D
 
@@ -33,12 +36,32 @@ func setup() -> void:
 		if car is CPUCar:
 			car.set_next_waypoint(track_processor.first_waypoint)
 	
+	cars_texture()
+	
 	race_controller.setup(cars, track_curve)
 	
 	game_ui.setup(cars)
 	
 
 
+func cars_texture() -> void:
+	match GlobalVars.player_car_texture:
+		0:
+			cpu_car.Cpu_texture = preload("res://assets/levels/Images/CarGreen.png")
+			cpu_car_2.Cpu_texture = preload("res://assets/levels/Images/CarPurple.png")
+			cpu_car_3.Cpu_texture = preload("res://assets/levels/Images/CarRed.png")
+		1:
+			cpu_car.Cpu_texture = preload("res://assets/levels/Images/CarBlue.png")
+			cpu_car_2.Cpu_texture = preload("res://assets/levels/Images/CarPurple.png")
+			cpu_car_3.Cpu_texture = preload("res://assets/levels/Images/CarRed.png")
+		2:
+			cpu_car.Cpu_texture = preload("res://assets/levels/Images/CarBlue.png")
+			cpu_car_2.Cpu_texture = preload("res://assets/levels/Images/CarGreen.png")
+			cpu_car_3.Cpu_texture = preload("res://assets/levels/Images/CarRed.png")
+		3:
+			cpu_car.Cpu_texture = preload("res://assets/levels/Images/CarBlue.png")
+			cpu_car_2.Cpu_texture = preload("res://assets/levels/Images/CarPurple.png")
+			cpu_car_3.Cpu_texture = preload("res://assets/levels/Images/CarGreen.png")
 
 
 func _path_direction(from_pos: Vector2) -> Vector2:

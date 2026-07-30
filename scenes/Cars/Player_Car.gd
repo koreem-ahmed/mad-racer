@@ -3,15 +3,27 @@ extends "Car.gd"
 
 class_name PlayerCar
 
-
 @export var max_speed:float = 380.0
 @export var friction:float = 300.0
 @export var acceleration:float = 150.0
 @export var steering_power:float = 6.0
 @export var min_steering_factor:float = 0.5
+@export var player_texture: Texture2D:
+	get():
+		match GlobalVars.player_car_texture:
+			0: return preload("res://assets/levels/Images/CarBlue.png")
+			1: return preload("res://assets/levels/Images/CarGreen.png")
+			2: return preload("res://assets/levels/Images/CarPurple.png")
+			3: return preload("res://assets/levels/Images/CarRed.png")
+			_: return preload("res://assets/levels/Images/CarRed.png")
 
 var _throttle: float = 0.0
 var _steer: float = 0.0
+
+func _ready() -> void:
+	super()
+	car_sprite.texture = player_texture
+
 
 
 func _process(delta: float) -> void:

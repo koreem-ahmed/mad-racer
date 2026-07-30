@@ -14,6 +14,14 @@ min_top_speed_limit = 300.0
 max_bottom_speed_limit = 120.0
 min_bottom_speed_limit = 80.0
 speed_reaction = 2.0
+Cpu_texture = null
+car_number = 0
+bounce_time = 0.8
+bounce_force = 30.0
+slipping_speed_range = Vector2(0.2, 0.5)
+
+[node name="Car_Sprite" parent="." index="0" unique_id=1896985246]
+texture = null
 
 [node name="Target sprite" type="Sprite2D" parent="." index="3" unique_id=458016957]
 modulate = Color(1, 0.11372549, 0.10980392, 1)

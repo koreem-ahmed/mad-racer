@@ -24,7 +24,6 @@ func _ready() -> void:
 	hide()
 	update_label()
 	timer.wait_time = waiting_time
-	
 
 
 func update_label() -> void:
