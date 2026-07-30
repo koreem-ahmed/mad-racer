@@ -7,6 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://dr8u06xrl4yv6" path="res://assets/levels/Images/CarPurple.png" id="5_dql22"]
 [ext_resource type="Texture2D" uid="uid://b7wmt1hcagsow" path="res://assets/levels/Images/CarRed.png" id="6_ud4xt"]
 [ext_resource type="Theme" uid="uid://mn3tc8u4lnhh" path="res://Resources/Buttons.tres" id="7_gosgp"]
+[ext_resource type="Shader" uid="uid://y12jsy6ei0u2" path="res://Resources/Background.gdshader" id="8_7u2l6"]
+[ext_resource type="Texture2D" uid="uid://c6r0wtyc42wkp" path="res://assets/levels/Backgrounds/Brown.png" id="9_dql22"]
+[ext_resource type="AudioStream" uid="uid://j5ukorijaeag" path="res://assets/Sounds/8_Bit_Adventure.mp3" id="10_dql22"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ud4xt"]
+shader = ExtResource("8_7u2l6")
+shader_parameter/SPEED = 0.5
 
 [node name="Choose objects" type="Control" unique_id=1322320051]
 layout_mode = 3
@@ -16,6 +23,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_h5t8x")
+
+[node name="ColorRect" type="TextureRect" parent="." unique_id=77965140]
+z_index = -1
+material = SubResource("ShaderMaterial_ud4xt")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_dql22")
+stretch_mode = 1
 
 [node name="enter_name" type="Label" parent="." unique_id=1682502773]
 layout_mode = 1
@@ -101,4 +120,11 @@ offset_bottom = 3.2079773
 text = "^"
 label_settings = ExtResource("1_g6j5g")
 
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=787799850]
+stream = ExtResource("10_dql22")
+volume_db = -80.0
+autoplay = true
+parameters/looping = true
+
+[connection signal="text_submitted" from="input" to="." method="_on_input_text_submitted"]
 [connection signal="pressed" from="Next_button" to="." method="_on_next_button_pressed"]

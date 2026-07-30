@@ -11,13 +11,12 @@ var blue_pos: Vector2 = Vector2(188.0, 480.0)
 var green_pos: Vector2 = Vector2(437.0, 480.0)
 var pink_pos: Vector2 = Vector2(685.0, 480.0)
 var red_pos: Vector2 = Vector2(935.0, 480.0)
-var player_name: String
+var car_name: String
 var pointer_placement: int = 0
 
 
 func _ready() -> void:
 	pointer.global_position = blue_pos
-	input.text_submitted.connect(_player_name)
 
 
 func _process(delta: float) -> void:
@@ -46,13 +45,12 @@ func _process(delta: float) -> void:
 			pointer.global_position = red_pos
 
 
-
-func _player_name(name: String) -> void:
-	player_name = name
-	
-	print(player_name)
-
 func _on_next_button_pressed() -> void:
-	GlobalVars.player_name = player_name
+	GlobalVars.player_name = car_name
 	GlobalVars.player_car_texture = pointer_placement
 	get_tree().change_scene_to_file("res://scenes/UI/Levels.tscn")
+
+
+func _on_input_text_submitted(name: String) -> void:
+	car_name = name
+	print(car_name)

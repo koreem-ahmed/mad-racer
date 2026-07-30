@@ -8,6 +8,9 @@ class_name RaceController
 
 @onready var race_controller: RaceController = $"."
 @onready var race_over_timer: Timer = $RaceOverTimer
+@onready var winning_label: Label = $"../UiCanvas/winning_label"
+@onready var winning_label_2: Label = $"../UiCanvas/winning_label2"
+@onready var winning_label_3: Label = $"../UiCanvas/winning_label3"
 
 
 var cars: Array[Car] = []
@@ -93,7 +96,12 @@ func finish_race() -> void:
 	EventHub.emit_on_race_over(results)
 	
 	print(winner_car,": ", winner_time)
-	if winner_car == "Mcqueen":
+	if winner_car == GlobalVars.player_name:
+		
+		winning_label.visible = true
+		winning_label_2.visible = true
+		winning_label_3.visible = true
+		
 		match current_track:
 			"Indy":
 				GlobalVars.wins = 1

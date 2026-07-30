@@ -29,12 +29,6 @@ stream_2/stream = ExtResource("6_fqhdt")
 [node name="Car" type="Area2D" unique_id=323058446]
 collision_mask = 0
 script = ExtResource("1_qn377")
-car_texture = null
-car_name = null
-car_number = null
-bounce_time = null
-bounce_force = null
-slipping_speed_range = null
 
 [node name="Car_Sprite" type="Sprite2D" parent="." unique_id=1896985246]
 rotation = 1.5707964

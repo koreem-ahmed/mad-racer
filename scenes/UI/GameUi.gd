@@ -48,17 +48,17 @@ func setup(cars: Array[Car]) -> void:
 		ui.update_values(car, 0, 0.0)
 		ui.show()
 		_car_ui_dict[car] = ui
+	
 	cars_texture()
 
 
 func cars_texture() -> void:
 	match GlobalVars.player_car_texture:
 		0:
-			print("it is 0")
 			car_ui.cpu_car_texture = preload("res://assets/levels/Images/CarBlue.png")
-			car_ui_2.cpu_car_texture = preload("res://assets/levels/Images/CarPurple.png")
-			car_ui_3.cpu_car_texture = preload("res://assets/levels/Images/CarRed.png")
-			car_ui_4.cpu_car_texture = preload("res://assets/levels/Images/CarGreen.png")
+			car_ui_2.cpu_car_texture = preload("res://assets/levels/Images/CarGreen.png")
+			car_ui_3.cpu_car_texture = preload("res://assets/levels/Images/CarPurple.png")
+			car_ui_4.cpu_car_texture = preload("res://assets/levels/Images/CarRed.png")
 		1:
 			car_ui.cpu_car_texture = preload("res://assets/levels/Images/CarGreen.png")
 			car_ui_2.cpu_car_texture = preload("res://assets/levels/Images/CarBlue.png")

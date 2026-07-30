@@ -1,25 +1,15 @@
 [gd_scene format=3 uid="uid://c7wrxul0fdr5p"]
 
 [ext_resource type="Script" uid="uid://8e728ofe58vc" path="res://scenes/UI/MainMenu.gd" id="1_6kh0n"]
-[ext_resource type="Texture2D" uid="uid://2msta3ane5h5" path="res://assets/levels/Images/WaterBg.png" id="1_frhrr"]
-[ext_resource type="Texture2D" uid="uid://c1m5vk3rejca7" path="res://assets/levels/Images/Monaco.png" id="2_elmld"]
-[ext_resource type="Curve2D" uid="uid://cno4a66jyafss" path="res://scenes/Tracks/monaco curve.tres" id="3_elmld"]
-[ext_resource type="PackedScene" uid="uid://drq8exgion2m4" path="res://scenes/Track Processor/TrackProcessor.tscn" id="4_av0jf"]
-[ext_resource type="Texture2D" uid="uid://dec3bup5l0rha" path="res://assets/levels/Images/FinishLine.png" id="5_kuv8g"]
-[ext_resource type="PackedScene" uid="uid://mqtjdmq724f8" path="res://scenes/Verification/VerificationLayer.tscn" id="6_s1u1q"]
-[ext_resource type="PackedScene" uid="uid://dvaolyrr6a1gs" path="res://scenes/Cars/CpuCar.tscn" id="8_r7s35"]
-[ext_resource type="Texture2D" uid="uid://dlry4iqrl31mt" path="res://assets/levels/Images/CarGreen.png" id="9_ht4ob"]
-[ext_resource type="Texture2D" uid="uid://dr8u06xrl4yv6" path="res://assets/levels/Images/CarPurple.png" id="10_ft4qb"]
-[ext_resource type="Texture2D" uid="uid://pndhsqg7v7iu" path="res://assets/levels/Images/CarBlue.png" id="11_5m80a"]
-[ext_resource type="PackedScene" uid="uid://cqs0ea73r6msh" path="res://scenes/Race Controller/RaceController.tscn" id="12_i2kgm"]
+[ext_resource type="Shader" uid="uid://y12jsy6ei0u2" path="res://Resources/Background.gdshader" id="5_s7yn2"]
+[ext_resource type="Texture2D" uid="uid://c6r0wtyc42wkp" path="res://assets/levels/Backgrounds/Brown.png" id="6_5r3px"]
 [ext_resource type="AudioStream" uid="uid://j5ukorijaeag" path="res://assets/Sounds/8_Bit_Adventure.mp3" id="13_4v2cq"]
 [ext_resource type="LabelSettings" uid="uid://dxbpu33njf08h" path="res://Resources/Ui_Label_32.tres" id="15_av0jf"]
-[ext_resource type="PackedScene" uid="uid://c7ikm6i8htbnt" path="res://scenes/Count Down/CountDown.tscn" id="15_kuv8g"]
 [ext_resource type="Theme" uid="uid://mn3tc8u4lnhh" path="res://Resources/Buttons.tres" id="16_kuv8g"]
-[ext_resource type="PackedScene" uid="uid://gxmb4rhrqes4" path="res://scenes/UI/GameUi.tscn" id="16_s1u1q"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1mgp"]
-size = Vector2(113.52194, 16)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kgeya"]
+shader = ExtResource("5_s7yn2")
+shader_parameter/SPEED = 0.5
 
 [node name="Main menu" type="Control" unique_id=162526997]
 layout_mode = 3
@@ -30,121 +20,20 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6kh0n")
 
-[node name="bakcground" type="Sprite2D" parent="." unique_id=1264585600]
-position = Vector2(591, 319)
-scale = Vector2(1.1, 1.1)
-texture = ExtResource("1_frhrr")
-
-[node name="track_img" type="Sprite2D" parent="." unique_id=1744607296]
-position = Vector2(578.00006, 324.00003)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("2_elmld")
-
-[node name="track_collision" type="Area2D" parent="." unique_id=504651111]
-collision_layer = 2
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="track_collision" unique_id=1649205031]
-polygon = PackedVector2Array(471, 325, 495, 332, 524, 332, 555, 314, 585, 284, 724, 141, 792, 164, 858, 199, 932, 241, 912, 243, 786, 226, 737, 233, 696, 253, 674, 284, 664, 337, 674, 375, 698, 419, 758, 469, 662, 438, 595, 413, 515, 396, 447, 394, 367, 401, 289, 415, 220, 421, 205, 417, 193, 401, 193, 356, 221, 298, 287, 218, 347, 176, 419, 278, 454, 313)
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="track_collision" unique_id=1230428694]
-polygon = PackedVector2Array(509, 13, 508, 186, 595, 89, 650, 45, 684, 23, 717, 14, 742, 17, 776, 26, 840, 52, 904, 82, 955, 109, 1017, 150, 1041, 175, 1061, 196, 1075, 219, 1084, 241, 1086, 262, 1081, 289, 1073, 312, 1053, 338, 1030, 351, 1003, 366, 970, 371, 938, 372, 901, 367, 862, 362, 804, 351, 849, 385, 892, 413, 929, 442, 951, 469, 961, 498, 963, 536, 952, 571, 931, 596, 909, 611, 873, 622, 850, 623, 818, 614, 785, 608, 742, 597, 699, 581, 507, 521, 478, 520, 442, 519, 398, 527, 235, 546, 197, 542, 158, 533, 133, 520, 103, 494, 85, 462, 69, 413, 65, 360, 78, 314, 94, 257, 130, 203, 174, 152, 217, 114, 257, 87, 315, 55, 350, 42, 390, 46, 412, 61, 429, 82, 445, 105, 467, 132, 481, 162, 501, 182, 501, 12, 10, 48, 25, 598, 927, 735, 1238, 261, 1198, -83, 550, 0)
-
-[node name="track path" type="Path2D" parent="." unique_id=1353045889]
-curve = ExtResource("3_elmld")
-
-[node name="TrackProcessor" parent="track path" unique_id=1278362240 instance=ExtResource("4_av0jf")]
-position = Vector2(658, 500)
-rotation = 0.35983974
-
-[node name="Start_Line" type="Area2D" parent="." unique_id=818135552]
-position = Vector2(697, 518)
-rotation = -1.208423
-collision_layer = 0
-
-[node name="Sprite2D" type="Sprite2D" parent="Start_Line" unique_id=1572707470]
-position = Vector2(1.9101944, 0)
-scale = Vector2(0.88108313, 1)
-texture = ExtResource("5_kuv8g")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Start_Line" unique_id=281279537]
-position = Vector2(1.757019, 0)
-shape = SubResource("RectangleShape2D_c1mgp")
-
-[node name="Verification holder" type="Node" parent="." unique_id=1250238625]
-
-[node name="Verification" parent="Verification holder" unique_id=1065954631 instance=ExtResource("6_s1u1q")]
-position = Vector2(763, 397.99994)
-rotation = -0.39891955
-
-[node name="Verification2" parent="Verification holder" unique_id=334455254 instance=ExtResource("6_s1u1q")]
-position = Vector2(563.99994, 222.99998)
-rotation = -2.082533
-
-[node name="Verification3" parent="Verification holder" unique_id=258026133 instance=ExtResource("6_s1u1q")]
-position = Vector2(149, 296)
-rotation = -2.8756201
-
-[node name="Cars holder" type="Node" parent="." unique_id=906806564]
-
-[node name="CPU Car" parent="Cars holder" unique_id=780805928 instance=ExtResource("8_r7s35")]
-position = Vector2(565.99994, 499)
-rotation = 0.34785226
-car_texture = ExtResource("9_ht4ob")
-car_name = "Franchisco"
-car_number = 2
-
-[node name="CPU Car2" parent="Cars holder" unique_id=2052316454 instance=ExtResource("8_r7s35")]
-position = Vector2(648.99994, 465)
-rotation = 0.3520755
-max_top_speed_limit = 300.0
-min_top_speed_limit = 250.0
-car_texture = ExtResource("10_ft4qb")
-car_name = "Will"
-car_number = 3
-
-[node name="CPU Car3" parent="Cars holder" unique_id=601883038 instance=ExtResource("8_r7s35")]
-position = Vector2(586.00006, 445.00003)
-rotation = 0.26118234
-max_top_speed_limit = 250.0
-min_top_speed_limit = 200.0
-car_texture = ExtResource("11_5m80a")
-car_name = "Weathers"
-car_number = 4
-
-[node name="CPU Car4" parent="Cars holder" unique_id=323058446 instance=ExtResource("8_r7s35")]
-position = Vector2(641.00006, 521)
-rotation = 0.26118234
-max_top_speed_limit = 200.0
-min_top_speed_limit = 150.0
-car_name = "Weathers"
-car_number = 4
-
-[node name="RaceController" parent="." unique_id=1426071283 instance=ExtResource("12_i2kgm")]
-total_laps = 2
-
-[node name="WayPoints holder" type="Node" parent="." unique_id=1660348858]
-
-[node name="UiCanvas" type="CanvasLayer" parent="." unique_id=1183019100]
-
-[node name="Count down" parent="UiCanvas" unique_id=2113504807 instance=ExtResource("15_kuv8g")]
-visible = false
-waiting_time = 0.1
-
-[node name="GameUI" parent="UiCanvas" unique_id=1711084736 instance=ExtResource("16_s1u1q")]
-offset_left = -5.0
-offset_top = 2.0
-offset_right = -5.0
-offset_bottom = 2.0
-
-[node name="ColorRect" type="ColorRect" parent="UiCanvas" unique_id=17592310]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=109793067]
+z_index = -1
+material = SubResource("ShaderMaterial_kgeya")
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.56078434)
+texture = ExtResource("6_5r3px")
+stretch_mode = 1
 
-[node name="Label" type="Label" parent="UiCanvas" unique_id=1545142501]
+[node name="Label" type="Label" parent="." unique_id=1545142501]
+layout_mode = 0
 offset_left = 223.0
 offset_top = 209.0
 offset_right = 895.0
@@ -154,19 +43,35 @@ theme_override_font_sizes/font_size = 32
 text = "Welcome to Made racer"
 label_settings = ExtResource("15_av0jf")
 
-[node name="Play" type="Button" parent="UiCanvas" unique_id=849016919]
-offset_left = 459.0
-offset_top = 313.0
-offset_right = 606.0
-offset_bottom = 377.0
+[node name="Play" type="Button" parent="." unique_id=849016919]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.44000003
+anchor_top = 0.45800003
+anchor_right = 0.57600003
+anchor_bottom = 0.54200006
+offset_left = 0.1199646
+offset_top = -0.2840271
+offset_right = 0.447937
+offset_bottom = 0.28396606
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("16_kuv8g")
 text = "Play"
 
-[node name="Quit" type="Button" parent="UiCanvas" unique_id=81755936]
-offset_left = 459.0
-offset_top = 399.0
-offset_right = 606.0
-offset_bottom = 463.0
+[node name="Quit" type="Button" parent="." unique_id=81755936]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.437
+anchor_top = 0.587
+anchor_right = 0.57500005
+anchor_bottom = 0.674
+offset_left = 0.57598877
+offset_top = 0.12399292
+offset_right = -0.4000244
+offset_bottom = 0.24798584
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("16_kuv8g")
 text = "Quit"
 
@@ -176,5 +81,5 @@ volume_db = -80.0
 autoplay = true
 parameters/looping = true
 
-[connection signal="pressed" from="UiCanvas/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="UiCanvas/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
