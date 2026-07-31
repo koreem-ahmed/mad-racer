@@ -16,7 +16,6 @@
 [ext_resource type="AudioStream" uid="uid://j5ukorijaeag" path="res://assets/Sounds/8_Bit_Adventure.mp3" id="14_u5gbe"]
 [ext_resource type="PackedScene" uid="uid://c7ikm6i8htbnt" path="res://scenes/Count Down/CountDown.tscn" id="14_uriw6"]
 [ext_resource type="LabelSettings" uid="uid://ph3kjfjlg3fp" path="res://Resources/Ui_Label_22.tres" id="15_u5gbe"]
-[ext_resource type="Texture2D" uid="uid://dp6i6nnvqfjjg" path="res://assets/levels/Images/StartBlock.png" id="17_4784h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_52pn0"]
 size = Vector2(113.52194, 16)
@@ -117,28 +116,6 @@ debug = true
 Cpu_texture = ExtResource("10_u5gbe")
 car_name = "Weathers"
 car_number = 4
-
-[node name="cars_places" type="Node" parent="." unique_id=666008948]
-
-[node name="StartBlock" type="Sprite2D" parent="cars_places" unique_id=2138996383]
-position = Vector2(506, 395)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("17_4784h")
-
-[node name="StartBlock2" type="Sprite2D" parent="cars_places" unique_id=1832158773]
-position = Vector2(506, 395)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("17_4784h")
-
-[node name="StartBlock3" type="Sprite2D" parent="cars_places" unique_id=1851371170]
-position = Vector2(506, 395)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("17_4784h")
-
-[node name="StartBlock4" type="Sprite2D" parent="cars_places" unique_id=700785561]
-position = Vector2(639, 531)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("17_4784h")
 
 [node name="RaceController" parent="." unique_id=1426071283 instance=ExtResource("9_4784h")]
 total_laps = 2

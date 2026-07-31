@@ -34,7 +34,6 @@ func _ready() -> void:
 	set_physics_process(false)
 
 
-
 func setup(vc: int) -> void:
 	_verification_count = vc
 
