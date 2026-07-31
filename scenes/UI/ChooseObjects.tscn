@@ -10,6 +10,7 @@
 [ext_resource type="Shader" uid="uid://y12jsy6ei0u2" path="res://Resources/Background.gdshader" id="8_7u2l6"]
 [ext_resource type="Texture2D" uid="uid://c6r0wtyc42wkp" path="res://assets/levels/Backgrounds/Brown.png" id="9_dql22"]
 [ext_resource type="AudioStream" uid="uid://j5ukorijaeag" path="res://assets/Sounds/8_Bit_Adventure.mp3" id="10_dql22"]
+[ext_resource type="Texture2D" uid="uid://8cu2neverj2p" path="res://assets/levels/Images/arrow.png" id="10_ud4xt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ud4xt"]
 shader = ExtResource("8_7u2l6")
@@ -62,6 +63,8 @@ offset_top = -0.27200317
 offset_right = 0.49591064
 offset_bottom = -0.16801453
 grow_horizontal = 2
+placeholder_text = "Enter Name"
+alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=443707115]
 layout_mode = 0
@@ -106,19 +109,20 @@ theme = ExtResource("7_gosgp")
 theme_override_font_sizes/font_size = 37
 text = "Next"
 
-[node name="pointer" type="Label" parent="." unique_id=140711077]
+[node name="pointer" type="TextureRect" parent="." unique_id=1080321569]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.16100001
 anchor_top = 0.735
 anchor_right = 0.18800001
 anchor_bottom = 0.77900004
-offset_left = -0.47201538
-offset_top = -0.27999878
-offset_right = 0.42399597
-offset_bottom = 3.2079773
-text = "^"
-label_settings = ExtResource("1_g6j5g")
+offset_left = 4.5279846
+offset_top = -3.2799988
+offset_right = 101.423996
+offset_bottom = 96.20798
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("10_ud4xt")
+stretch_mode = 4
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=787799850]
 stream = ExtResource("10_dql22")

@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://8e728ofe58vc" path="res://scenes/UI/MainMenu.gd" id="1_6kh0n"]
 [ext_resource type="Shader" uid="uid://y12jsy6ei0u2" path="res://Resources/Background.gdshader" id="5_s7yn2"]
 [ext_resource type="Texture2D" uid="uid://c6r0wtyc42wkp" path="res://assets/levels/Backgrounds/Brown.png" id="6_5r3px"]
+[ext_resource type="Texture2D" uid="uid://o8o8xa71f8u2" path="res://assets/levels/Images/Logo.png" id="6_s7yn2"]
 [ext_resource type="AudioStream" uid="uid://j5ukorijaeag" path="res://assets/Sounds/8_Bit_Adventure.mp3" id="13_4v2cq"]
-[ext_resource type="LabelSettings" uid="uid://dxbpu33njf08h" path="res://Resources/Ui_Label_32.tres" id="15_av0jf"]
 [ext_resource type="Theme" uid="uid://mn3tc8u4lnhh" path="res://Resources/Buttons.tres" id="16_kuv8g"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kgeya"]
@@ -32,17 +32,6 @@ grow_vertical = 2
 texture = ExtResource("6_5r3px")
 stretch_mode = 1
 
-[node name="Label" type="Label" parent="." unique_id=1545142501]
-layout_mode = 0
-offset_left = 223.0
-offset_top = 209.0
-offset_right = 895.0
-offset_bottom = 241.0
-size_flags_horizontal = 8
-theme_override_font_sizes/font_size = 32
-text = "Welcome to Made racer"
-label_settings = ExtResource("15_av0jf")
-
 [node name="Play" type="Button" parent="." unique_id=849016919]
 layout_mode = 1
 anchors_preset = -1
@@ -51,9 +40,9 @@ anchor_top = 0.45800003
 anchor_right = 0.57600003
 anchor_bottom = 0.54200006
 offset_left = 0.1199646
-offset_top = -0.2840271
+offset_top = 46.715973
 offset_right = 0.447937
-offset_bottom = 0.28396606
+offset_bottom = 47.283966
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("16_kuv8g")
@@ -67,9 +56,9 @@ anchor_top = 0.587
 anchor_right = 0.57500005
 anchor_bottom = 0.674
 offset_left = 0.57598877
-offset_top = 0.12399292
+offset_top = 47.123993
 offset_right = -0.4000244
-offset_bottom = 0.24798584
+offset_bottom = 47.247986
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("16_kuv8g")
@@ -80,6 +69,14 @@ stream = ExtResource("13_4v2cq")
 volume_db = -80.0
 autoplay = true
 parameters/looping = true
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=123944630]
+layout_mode = 0
+offset_left = 282.0
+offset_top = -109.0
+offset_right = 917.0
+offset_bottom = 526.0
+texture = ExtResource("6_s7yn2")
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

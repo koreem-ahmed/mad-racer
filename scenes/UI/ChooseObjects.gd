@@ -4,7 +4,7 @@ extends Control
 @onready var green_car: TextureRect = $HBoxContainer/GreenCar
 @onready var pink_car: TextureRect = $HBoxContainer/PinkCar
 @onready var red_car: TextureRect = $HBoxContainer/RedCar
-@onready var pointer: Label = $pointer
+@onready var pointer: TextureRect = $pointer
 @onready var input: LineEdit = $input
 
 var blue_pos: Vector2 = Vector2(188.0, 480.0)
