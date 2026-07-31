@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://cdsexay2q8xy0"]
+
+[ext_resource type="Shader" uid="uid://y12jsy6ei0u2" path="res://Resources/Background.gdshader" id="1_iknpa"]
+[ext_resource type="Texture2D" uid="uid://c6r0wtyc42wkp" path="res://assets/levels/Backgrounds/Brown.png" id="2_nlg6c"]
+[ext_resource type="AudioStream" uid="uid://j5ukorijaeag" path="res://assets/Sounds/8_Bit_Adventure.mp3" id="3_yucn4"]
+[ext_resource type="Texture2D" uid="uid://o8o8xa71f8u2" path="res://assets/levels/Images/Logo.png" id="4_4jclv"]
+[ext_resource type="LabelSettings" uid="uid://dipt4qjr2iwdn" path="res://Resources/Ui_Label_14.tres" id="5_88n8u"]
+[ext_resource type="LabelSettings" uid="uid://dxbpu33njf08h" path="res://Resources/Ui_Label_32.tres" id="6_xb15i"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1kk53"]
+shader = ExtResource("1_iknpa")
+shader_parameter/SPEED = 0.5
+
+[node name="Control" type="Control" unique_id=1005170946]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=151708090]
+z_index = -1
+material = SubResource("ShaderMaterial_1kk53")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_nlg6c")
+stretch_mode = 1
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=878847029]
+stream = ExtResource("3_yucn4")
+volume_db = -12.0
+autoplay = true
+parameters/looping = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=525991043]
+position = Vector2(100, 55)
+scale = Vector2(2, 2)
+texture = ExtResource("4_4jclv")
+region_enabled = true
+region_rect = Rect2(16.756035, 42.22012, 88.823, 39.933033)
+
+[node name="Label" type="Label" parent="." unique_id=129457191]
+layout_mode = 0
+offset_left = 859.0
+offset_top = 617.0
+offset_right = 1139.0
+offset_bottom = 640.0
+text = "Made By Koreem Ahmed"
+label_settings = ExtResource("5_88n8u")
+
+[node name="Label2" type="Label" parent="." unique_id=1882436864]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 304.0
+offset_right = 898.0
+offset_bottom = 336.0
+text = "Thank you for Playing"
+label_settings = ExtResource("6_xb15i")

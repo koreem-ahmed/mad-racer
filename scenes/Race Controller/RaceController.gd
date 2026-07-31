@@ -11,6 +11,7 @@ class_name RaceController
 @onready var winning_label: Label = $"../UiCanvas/winning_label"
 @onready var winning_label_2: Label = $"../UiCanvas/winning_label2"
 @onready var winning_label_3: Label = $"../UiCanvas/winning_label3"
+@onready var lossing_label: Label = $"../UiCanvas/lossing_label"
 
 
 var cars: Array[Car] = []
@@ -115,7 +116,8 @@ func finish_race() -> void:
 			"Silverstone":
 				GlobalVars.wins = 4
 				print("added")
-
+	else:
+		lossing_label.visible = true
 
 
 func _on_race_over_timer_timeout() -> void:

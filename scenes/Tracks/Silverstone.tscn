@@ -13,7 +13,6 @@ point_count = 15
 [node name="Silverstone" unique_id=647559077 instance=ExtResource("1_0hi7n")]
 
 [node name="bakcground" parent="." index="0" unique_id=460417291]
-visible = false
 texture = ExtResource("2_vijgx")
 
 [node name="track_img" parent="." index="1" unique_id=1767059704]
@@ -64,27 +63,21 @@ position = Vector2(515.00006, 103)
 rotation = 3.1129818
 
 [node name="CPU Car" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="1" unique_id=860932081]
-position = Vector2(581.00006, 105.000015)
+position = Vector2(583.00006, 105.000015)
 rotation = 3.1129603
-debug = false
-max_top_speed_limit = 390.0
-min_top_speed_limit = 370.0
-Cpu_texture = null
-
-[node name="CPU Car2" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="2" unique_id=1262372244]
-position = Vector2(586.00006, 57)
-rotation = 3.1089852
-debug = false
 max_top_speed_limit = 370.0
 min_top_speed_limit = 360.0
-Cpu_texture = null
+
+[node name="CPU Car2" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="2" unique_id=1262372244]
+position = Vector2(588.00006, 57)
+rotation = 3.1089852
+max_top_speed_limit = 370.0
+min_top_speed_limit = 360.0
 
 [node name="CPU Car3" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="3" unique_id=1915119543]
-position = Vector2(514, 60)
+position = Vector2(516, 60)
 rotation = 3.1617649
-debug = false
-min_top_speed_limit = 380.0
-Cpu_texture = null
+min_top_speed_limit = 340.0
 
 [node name="RaceController" parent="." index="8" unique_id=1426071283]
 current_track = "Silverstone"

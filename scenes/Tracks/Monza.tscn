@@ -91,21 +91,11 @@ skill = 0.25
 max_top_speed_limit = 200.0
 min_top_speed_limit = 190.0
 
-[node name="StartBlock" parent="cars_places" parent_id_path=PackedInt32Array(666008948) index="0" unique_id=2138996383]
-position = Vector2(797.9999, 602)
-rotation = 3.1307642
-
-[node name="StartBlock2" parent="cars_places" parent_id_path=PackedInt32Array(666008948) index="1" unique_id=1832158773]
-position = Vector2(796.00006, 565.00006)
-rotation = 3.1342483
-
-[node name="StartBlock3" parent="cars_places" parent_id_path=PackedInt32Array(666008948) index="2" unique_id=1851371170]
-position = Vector2(847, 565)
-rotation = -3.1365118
-
-[node name="StartBlock4" parent="cars_places" parent_id_path=PackedInt32Array(666008948) index="3" unique_id=700785561]
-position = Vector2(846, 601)
-rotation = 3.1336412
-
-[node name="RaceController" parent="." index="9" unique_id=1426071283]
+[node name="RaceController" parent="." index="8" unique_id=1426071283]
 current_track = "Monza"
+
+[node name="retry" parent="UiCanvas" parent_id_path=PackedInt32Array(1376558374) index="5" unique_id=473146660]
+offset_left = 485.0
+offset_top = 431.0
+offset_right = 607.0
+offset_bottom = 486.0

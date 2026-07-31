@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="TrackInfo" format=3 uid="uid://sah33hwoucro"]
 
 [ext_resource type="Script" uid="uid://c2ahdptr1kfli" path="res://Classes/TrackInfo.gd" id="1_1gp6b"]
-[ext_resource type="Texture2D" uid="uid://bw48nm51i6v4h" path="res://assets/levels/Images/Silverstone.png" id="1_iwlak"]
-[ext_resource type="PackedScene" uid="uid://btogy8mv6fgx1" path="res://scenes/Tracks/Silverstone.tscn" id="3_50hh5"]
+[ext_resource type="Texture2D" uid="uid://y8hkki1xfqn6" path="res://assets/levels/Images/Monza.png" id="1_iwlak"]
+[ext_resource type="PackedScene" uid="uid://dyqbn168k0x4l" path="res://scenes/Tracks/Monza.tscn" id="3_50hh5"]
 
 [resource]
 script = ExtResource("1_1gp6b")
-track_name = "Silverstone"
+track_name = "Monza"
 track_scene = ExtResource("3_50hh5")
 preview_image = ExtResource("1_iwlak")
 metadata/_custom_type_script = "uid://c2ahdptr1kfli"

@@ -46,18 +46,20 @@ rotation = 0.3551546
 
 [node name="CPU Car" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="1" unique_id=860932081]
 position = Vector2(506.00006, 489)
-debug = false
-skill = 0.8
+skill = 0.9
+max_top_speed_limit = 340.0
+min_top_speed_limit = 280.0
 
 [node name="CPU Car2" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="2" unique_id=1262372244]
 position = Vector2(606, 455)
-debug = false
-skill = 0.5
+skill = 0.8
+max_top_speed_limit = 330.0
+min_top_speed_limit = 320.0
 
 [node name="CPU Car3" parent="Cars holder" parent_id_path=PackedInt32Array(1837840757) index="3" unique_id=1915119543]
 position = Vector2(532.00006, 436.00003)
-debug = false
-skill = 0.3
+skill = 0.7
+max_top_speed_limit = 320.0
 
 [node name="RaceController" parent="." index="8" unique_id=1426071283]
 current_track = "Monaco"

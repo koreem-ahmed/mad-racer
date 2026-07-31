@@ -126,7 +126,7 @@ stretch_mode = 4
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=787799850]
 stream = ExtResource("10_dql22")
-volume_db = -80.0
+volume_db = -12.0
 autoplay = true
 parameters/looping = true
 

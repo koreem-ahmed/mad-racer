@@ -94,7 +94,6 @@ car_number = 1
 z_index = 1
 position = Vector2(565.99994, 499)
 rotation = 0.34785226
-debug = true
 Cpu_texture = ExtResource("9_182rf")
 car_name = "Franchisco"
 car_number = 2
@@ -103,7 +102,6 @@ car_number = 2
 z_index = 1
 position = Vector2(648.99994, 465)
 rotation = 0.3520755
-debug = true
 Cpu_texture = ExtResource("10_q1gcb")
 car_name = "Will"
 car_number = 3
@@ -112,7 +110,6 @@ car_number = 3
 z_index = 1
 position = Vector2(586.00006, 445.00003)
 rotation = 0.26118234
-debug = true
 Cpu_texture = ExtResource("10_u5gbe")
 car_name = "Weathers"
 car_number = 4
@@ -154,6 +151,15 @@ offset_top = 467.0
 offset_right = 675.0
 offset_bottom = 489.0
 text = "Click esc"
+label_settings = ExtResource("15_u5gbe")
+
+[node name="lossing_label" type="Label" parent="UiCanvas" unique_id=1190440561]
+visible = false
+offset_left = 274.0
+offset_top = 433.0
+offset_right = 934.0
+offset_bottom = 456.0
+text = "Click esc and enter the race again"
 label_settings = ExtResource("15_u5gbe")
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=2112462705]

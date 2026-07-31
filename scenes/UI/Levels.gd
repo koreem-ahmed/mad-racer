@@ -25,3 +25,5 @@ func calc_win() -> void:
 	if win >= 3:
 		if is_instance_valid(lock_level_4):
 			lock_level_4.queue_free()
+	if win >= 4:
+		get_tree().change_scene_to_file("res://scenes/UI/thx_for_playing.tscn")
